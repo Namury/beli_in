@@ -17,9 +17,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'user_type_id',
+        'user_role_id',
         'name',
         'email',
         'password',
+        'page_name',
+        'page_slug',
     ];
 
     /**
@@ -27,17 +31,54 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    // protected $hidden = [
+    //     'password',
+    //     'remember_token',
+    // ];
 
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
+
+    public function userRole()
+    {
+        return $this->belongsTo(UserRole::class, 'user_role_id');
+    }
+
+    public function userType()
+    {
+        return $this->belongsTo(UserType::class, 'user_type_id');
+    }
+
+    public function wallet()
+    {
+        return $this->hasOne(Wallet::class, 'user_id');
+    }
+
+    public function posts()
+    {
+    	return $this->hasMany(Post::class, 'user_id');
+    }
+
+    public function postCategories()
+    {
+    	return $this->hasMany(PostCategory::class, 'user_id');
+    }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class, 'user_id');
+    }
+
+    public function supports()
+    {
+        return $this->hasMany(Support::class, 'supported_id');
+    }
+
+
 }

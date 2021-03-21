@@ -1,0 +1,43 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+use App\Models\Post;
+
+class PostSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $datas = [
+            ['title' => 'My Vlog', 'user_id' => 1, 'post_category_id' => 1,'description' => 'My First Post', 'content' => "<p><b>Lorem ipsum dolor sit amet,</b> Article 1 Content Testing. Donec blandit ipsum non condimentum viverra. In varius tellus at augue condimentum posuere. Duis orci purus, pretium eu scelerisque nec, convallis nec metus. Donec nulla urna, sagittis nec pretium nec, egestas id enim. Suspendisse blandit, purus quis sagittis volutpat, nisi eros ullamcorper elit, quis ornare nisi justo aliquet nunc. Donec scelerisque rutrum magna venenatis tempor. Proin suscipit ipsum in est hendrerit cursus. Nullam vehicula, tellus et auctor malesuada, turpis dui mattis metus, sit amet accumsan neque neque sed nibh. Curabitur sit amet nibh in felis convallis finibus.</p>
+            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin quis elementum nunc. Vivamus mollis ipsum varius, pulvinar dolor aliquam, tempor ipsum. Proin maximus pulvinar nisi, quis tempor ipsum hendrerit eget. Sed justo ligula, dictum sed porttitor nec, vehicula ac quam. Donec ligula tortor, placerat nec varius ut, hendrerit quis orci. Praesent finibus congue risus nec dictum. Donec vulputate bibendum nibh, eu rutrum nulla blandit eget. Integer elementum ex sit amet mauris efficitur eleifend.</p>"],
+            ['title' => 'My Tutorial', 'user_id' => 2, 'post_category_id' => 2,'description' => 'My First Post', 'content' => "<p><b>Lorem ipsum dolor sit amet,</b> Article 1 Content Testing. Donec blandit ipsum non condimentum viverra. In varius tellus at augue condimentum posuere. Duis orci purus, pretium eu scelerisque nec, convallis nec metus. Donec nulla urna, sagittis nec pretium nec, egestas id enim. Suspendisse blandit, purus quis sagittis volutpat, nisi eros ullamcorper elit, quis ornare nisi justo aliquet nunc. Donec scelerisque rutrum magna venenatis tempor. Proin suscipit ipsum in est hendrerit cursus. Nullam vehicula, tellus et auctor malesuada, turpis dui mattis metus, sit amet accumsan neque neque sed nibh. Curabitur sit amet nibh in felis convallis finibus.</p>
+            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin quis elementum nunc. Vivamus mollis ipsum varius, pulvinar dolor aliquam, tempor ipsum. Proin maximus pulvinar nisi, quis tempor ipsum hendrerit eget. Sed justo ligula, dictum sed porttitor nec, vehicula ac quam. Donec ligula tortor, placerat nec varius ut, hendrerit quis orci. Praesent finibus congue risus nec dictum. Donec vulputate bibendum nibh, eu rutrum nulla blandit eget. Integer elementum ex sit amet mauris efficitur eleifend.</p>"],
+            ['title' => 'My Tips', 'user_id' => 3, 'post_category_id' => 3,'description' => 'My First Post', 'content' => "<p><b>Lorem ipsum dolor sit amet,</b> Article 1 Content Testing. Donec blandit ipsum non condimentum viverra. In varius tellus at augue condimentum posuere. Duis orci purus, pretium eu scelerisque nec, convallis nec metus. Donec nulla urna, sagittis nec pretium nec, egestas id enim. Suspendisse blandit, purus quis sagittis volutpat, nisi eros ullamcorper elit, quis ornare nisi justo aliquet nunc. Donec scelerisque rutrum magna venenatis tempor. Proin suscipit ipsum in est hendrerit cursus. Nullam vehicula, tellus et auctor malesuada, turpis dui mattis metus, sit amet accumsan neque neque sed nibh. Curabitur sit amet nibh in felis convallis finibus.</p>
+            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin quis elementum nunc. Vivamus mollis ipsum varius, pulvinar dolor aliquam, tempor ipsum. Proin maximus pulvinar nisi, quis tempor ipsum hendrerit eget. Sed justo ligula, dictum sed porttitor nec, vehicula ac quam. Donec ligula tortor, placerat nec varius ut, hendrerit quis orci. Praesent finibus congue risus nec dictum. Donec vulputate bibendum nibh, eu rutrum nulla blandit eget. Integer elementum ex sit amet mauris efficitur eleifend.</p>"],
+            ['title' => 'My Trick', 'user_id' => 4, 'post_category_id' => 4,'description' => 'My First Post', 'content' => "<p><b>Lorem ipsum dolor sit amet,</b> Article 1 Content Testing. Donec blandit ipsum non condimentum viverra. In varius tellus at augue condimentum posuere. Duis orci purus, pretium eu scelerisque nec, convallis nec metus. Donec nulla urna, sagittis nec pretium nec, egestas id enim. Suspendisse blandit, purus quis sagittis volutpat, nisi eros ullamcorper elit, quis ornare nisi justo aliquet nunc. Donec scelerisque rutrum magna venenatis tempor. Proin suscipit ipsum in est hendrerit cursus. Nullam vehicula, tellus et auctor malesuada, turpis dui mattis metus, sit amet accumsan neque neque sed nibh. Curabitur sit amet nibh in felis convallis finibus.</p>
+            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin quis elementum nunc. Vivamus mollis ipsum varius, pulvinar dolor aliquam, tempor ipsum. Proin maximus pulvinar nisi, quis tempor ipsum hendrerit eget. Sed justo ligula, dictum sed porttitor nec, vehicula ac quam. Donec ligula tortor, placerat nec varius ut, hendrerit quis orci. Praesent finibus congue risus nec dictum. Donec vulputate bibendum nibh, eu rutrum nulla blandit eget. Integer elementum ex sit amet mauris efficitur eleifend.</p>"],
+            ['title' => 'My Result', 'user_id' => 5, 'post_category_id' => 5,'description' => 'My First Post', 'content' => "<p><b>Lorem ipsum dolor sit amet,</b> Article 1 Content Testing. Donec blandit ipsum non condimentum viverra. In varius tellus at augue condimentum posuere. Duis orci purus, pretium eu scelerisque nec, convallis nec metus. Donec nulla urna, sagittis nec pretium nec, egestas id enim. Suspendisse blandit, purus quis sagittis volutpat, nisi eros ullamcorper elit, quis ornare nisi justo aliquet nunc. Donec scelerisque rutrum magna venenatis tempor. Proin suscipit ipsum in est hendrerit cursus. Nullam vehicula, tellus et auctor malesuada, turpis dui mattis metus, sit amet accumsan neque neque sed nibh. Curabitur sit amet nibh in felis convallis finibus.</p>
+            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin quis elementum nunc. Vivamus mollis ipsum varius, pulvinar dolor aliquam, tempor ipsum. Proin maximus pulvinar nisi, quis tempor ipsum hendrerit eget. Sed justo ligula, dictum sed porttitor nec, vehicula ac quam. Donec ligula tortor, placerat nec varius ut, hendrerit quis orci. Praesent finibus congue risus nec dictum. Donec vulputate bibendum nibh, eu rutrum nulla blandit eget. Integer elementum ex sit amet mauris efficitur eleifend.</p>"],
+            ['title' => 'My Vlog', 'user_id' => 6, 'post_category_id' => 6,'description' => 'My First Post', 'content' => "<p><b>Lorem ipsum dolor sit amet,</b> Article 1 Content Testing. Donec blandit ipsum non condimentum viverra. In varius tellus at augue condimentum posuere. Duis orci purus, pretium eu scelerisque nec, convallis nec metus. Donec nulla urna, sagittis nec pretium nec, egestas id enim. Suspendisse blandit, purus quis sagittis volutpat, nisi eros ullamcorper elit, quis ornare nisi justo aliquet nunc. Donec scelerisque rutrum magna venenatis tempor. Proin suscipit ipsum in est hendrerit cursus. Nullam vehicula, tellus et auctor malesuada, turpis dui mattis metus, sit amet accumsan neque neque sed nibh. Curabitur sit amet nibh in felis convallis finibus.</p>
+            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin quis elementum nunc. Vivamus mollis ipsum varius, pulvinar dolor aliquam, tempor ipsum. Proin maximus pulvinar nisi, quis tempor ipsum hendrerit eget. Sed justo ligula, dictum sed porttitor nec, vehicula ac quam. Donec ligula tortor, placerat nec varius ut, hendrerit quis orci. Praesent finibus congue risus nec dictum. Donec vulputate bibendum nibh, eu rutrum nulla blandit eget. Integer elementum ex sit amet mauris efficitur eleifend.</p>"],
+        ];
+
+        foreach($datas as $data){
+            $table = new Post;
+            $table->title = $data['title'];
+            $table->user_id = $data['user_id'];
+            $table->post_category_id = $data['post_category_id'];
+            $table->content = $data['content'];
+            $table->description = $data['description'];
+            $table->save();
+        }
+    }
+}
