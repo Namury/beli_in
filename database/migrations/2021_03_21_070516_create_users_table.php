@@ -15,14 +15,14 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_type_id')->constrained();
+            $table->foreignId('user_type_id')->nullable()->default(null)->constrained();
             $table->foreignId('user_role_id')->default(1)->constrained();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password')->nullable();
             $table->text('description')->nullable()->default(NULL);
-            $table->string('page_name');
-            $table->string('page_slug');
+            $table->string('page_name')->nullable()->default(null);
+            $table->string('page_slug')->nullable()->default(null);
             $table->timestamps();
         });
     }

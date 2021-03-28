@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//auth
+Route::get('/', 'AuthController@index');
+Route::get('/login', 'AuthController@login')->name('login');
+Route::get('/register/creator', 'AuthController@registerCreator');
+Route::get('/register/supporter', 'AuthController@registerSupporter');
+Route::get('/logout', 'AuthController@logout');
+
+Route::post('/login', 'AuthController@loginAction');
+Route::post('/register/creator', 'AuthController@registerCreatorAction');
+Route::post('/register/supporter', 'AuthController@registerSupporterAction');
+
+//dashboard
+Route::get('/dashboard', 'DashboardController@index');
