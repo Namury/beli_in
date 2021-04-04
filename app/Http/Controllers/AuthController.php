@@ -21,7 +21,11 @@ class AuthController extends Controller
     public function index()
     {
         if (Auth::check()){
-            return redirect('/dashboard');
+            if(Auth::user()->isCreator())
+                return redirect('/dashboard');
+            else
+                return redirect('/homepage');
+
         }else{
             return view('landing');
         }

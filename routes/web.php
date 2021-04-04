@@ -30,3 +30,6 @@ Route::post('/register/supporter', 'AuthController@registerSupporterAction');
 
 //dashboard
 Route::get('/dashboard', 'DashboardController@index');
+
+//homepage
+Route::get('/homepage', 'HomepageController@index');

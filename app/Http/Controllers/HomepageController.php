@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Exception;
+use Illuminate\Http\Request;
 
-use App\Models\User;
-
-class DashboardController extends Controller
+class HomepageController extends Controller
 {
     public function __construct() {
         $this->middleware('auth', ['except' => []]);
-        $this->middleware('creator', ['except' => []]);
+        $this->middleware('supporter', ['except' => []]);
     }
 
     public function index()
@@ -20,7 +16,7 @@ class DashboardController extends Controller
         // $user = Auth::user()->isCreator();
         // $user = User::isCreator();
         // dd($user);
-        return view('creator.dashboard');
+        return view('supporter.homepage');
 
     }
 }

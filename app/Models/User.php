@@ -45,6 +45,14 @@ class User extends Authenticatable
     //     'email_verified_at' => 'datetime',
     // ];
 
+    public function isCreator(){
+        if($this->user_role_id == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function userRole()
     {
         return $this->belongsTo(UserRole::class, 'user_role_id');
