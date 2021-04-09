@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="{{ asset('style/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('style/js/bootstrap.min.js')}}"></script>
+
 </head>
 <body>
     <ul>
@@ -12,7 +16,7 @@
             @if (Auth::user()->isCreator())
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="#">Explore</a></li>
-                <li><a href="#">My Post</a></li>
+                <li><a href="/post">My Post</a></li>
                 <li><a href="#">Supporters</a></li>
                 <li><a href="#">Pengaturan</a></li>
                 

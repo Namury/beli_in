@@ -8,7 +8,7 @@ class HomepageController extends Controller
 {
     public function __construct() {
         $this->middleware('auth', ['except' => []]);
-        $this->middleware('supporter', ['except' => []]);
+        $this->middleware('creator', ['except' => ['view']]);
     }
 
     public function index()

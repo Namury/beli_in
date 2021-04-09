@@ -28,8 +28,24 @@ Route::post('/login', 'AuthController@loginAction');
 Route::post('/register/creator', 'AuthController@registerCreatorAction');
 Route::post('/register/supporter', 'AuthController@registerSupporterAction');
 
-//dashboard
-Route::get('/dashboard', 'DashboardController@index');
+//creator from supporter
+Route::get('{slug}/post/{id}', 'PostController@show');
 
 //homepage
 Route::get('/homepage', 'HomepageController@index');
+
+//dashboard
+Route::get('/dashboard', 'DashboardController@index');
+
+//post
+Route::get('/post', 'PostController@index');
+Route::get('/post/create', 'PostController@create');
+Route::get('/post/create/category', 'PostController@createCategory');
+
+Route::post('/post/{id}/edit', 'PostController@edit');
+Route::post('/post/create', 'PostController@createAction');
+Route::post('/post/create/category', 'PostController@createCategoryAction');
+
+Route::patch('/post/{id}/edit', 'PostController@editAction');
+
+Route::delete('post/{id}/delete', 'PostController@delete');
