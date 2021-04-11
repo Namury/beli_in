@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Exception;
 
 use App\Models\User;
+use App\Models\Post;
 
 class DashboardController extends Controller
 {
@@ -17,10 +18,6 @@ class DashboardController extends Controller
 
     public function index()
     {
-        // $user = Auth::user()->isCreator();
-        // $user = User::isCreator();
-        // dd($user);
         return view('creator.dashboard');
-
     }
 }

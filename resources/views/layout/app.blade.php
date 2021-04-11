@@ -15,14 +15,14 @@
             <li>Hello {{ Auth::user()->name }}</li>
             @if (Auth::user()->isCreator())
                 <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="#">Explore</a></li>
+                <li><a href="/explore">Explore</a></li>
                 <li><a href="/post">My Post</a></li>
                 <li><a href="#">Supporters</a></li>
                 <li><a href="#">Pengaturan</a></li>
                 
             @else
                 <li><a href="/homepage">Homepage</a></li>
-                <li><a href="#">Explore</a></li>
+                <li><a href="/explore">Explore</a></li>
             @endif
             <li><a href="/logout">Logout</a></li>
         @else

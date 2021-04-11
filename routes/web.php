@@ -37,6 +37,9 @@ Route::get('/homepage', 'HomepageController@index');
 //dashboard
 Route::get('/dashboard', 'DashboardController@index');
 
+//explore
+Route::get('/explore', 'ExploreController@index');
+
 //post
 Route::get('/post', 'PostController@index');
 Route::get('/post/create', 'PostController@create');
