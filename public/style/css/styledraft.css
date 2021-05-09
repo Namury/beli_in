@@ -1,7 +1,8 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;');
 
 /* BASIC */
-
+@media (min-width: 699px)  {
 html {
 background: white;
 font-family: 'Inter', sans-serif;
@@ -65,10 +66,41 @@ img {
 	padding-right:20px;
 	position:fixed;
 	z-index:9999;
-	top:0;
 	background-color:white;
+	top:0;
 }
 
+
+.tombolatas{
+	float:right;
+	font-size:40;
+	webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	cursor: pointer;
+	margin-top:10;
+	font-weight:500;
+	text-align:center;
+	justify-content:center;
+	margin-left:10;
+	margin-right:20;
+	margin-top:35;
+	padding-top:5;
+	color: #84DCC6;
+}
+
+.tombolatas.login{
+	border-radius:20px;
+	background-color:#84DCC6;
+	color:white;
+	width:190;
+	height:48.5;
+	margin-top:24;
+	margin-right:50;
+}
 
 .judul1{
 	color:black;
@@ -102,7 +134,7 @@ webkit-touch-callout: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-	background-image: url("image/BG.png");
+	background-image: url("public/style/assets/BG.png");
   background-size: cover;
   background-position: bottom;
   background-size: 100%;
@@ -145,7 +177,7 @@ background-image: url("public/style/assets/CardCreator.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
-
+ju
 .kiri{
 float:left;}
 
@@ -481,4 +513,565 @@ background-position:top center;
   width:80px;
   height:50px;
   margin-left:45px;
+}
+
+}
+
+@media (max-width: 700px) and (min-width: 0px) {
+	
+
+html {
+background: white;
+font-family: 'Inter', sans-serif;
+ overflow: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  margin:0 0 0 0;
+}
+
+h4{
+	font-size:14;
+	font-weight:550;
+}
+
+a {
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+  cursor: pointer;
+  color: #63bdd9;
+  
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display:inline-block;
+  margin: 40px 8px 10px 8px; 
+  color: #63bdd9;
+}
+
+#formlogin{
+	height:100%;
+	opacity:100%;
+	margin:auto;
+}
+
+#formregister{
+	height:100%;
+	opacity:100%;
+	margin:auto;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+	 object-fit: cover;
+}
+
+.atas {
+  width: 100%;
+  height: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  background-color: white;
+}
+
+
+.judul1{
+	color:black;
+	font-weight:900;
+	font-size:20;
+	margin-top:1px;
+	float:left;
+	position:relative;
+	height:100%;
+	 -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+		cursor: pointer;
+}
+
+.namaatas{
+	height:60;
+}
+
+.tombolatas{
+	float:right;
+	font-size:30;
+	webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	cursor: pointer;
+	margin-top:-20;
+	font-weight:500;
+	text-align:center;
+	justify-content:center;
+	padding-top:10;
+	color: #84DCC6;
+}
+
+.tombolatas.login{
+	border-radius:20px;
+	background-color:#84DCC6;
+	color:white;
+	width:150;
+	height:39.5;
+	margin-top:18;
+	margin-right:40;
+	
+}
+
+
+.buttonpay{
+  background-color:#FFFFFF;
+  border:1px solid #4BD0AF;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 20px 20px 20px 20px;
+  margin: 10px 10px 0px 10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  font-weight:lightest;
+  width:70%;
+  height:30;
+  margin-bottom:5;	
+  font-size:20;
+  padding:5px 0 5px 0 	;
+  cursor:pointer;
+
+}
+
+.isi{
+padding-top:110;
+width:100%;
+height:100%;
+text-align:center;
+webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	background-image: url("public/style/assets/BG.png");
+  background-size: cover;
+  background-position: 0px 100px;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat
+}
+
+.judul{
+font-size:30;
+font-weight:medium;
+margin-bottom:120;
+text-align:center;
+justify-content:center;
+max-width:600;
+
+}
+
+.kotak{
+height:190;
+width:180;
+background-color:white;
+border-radius:50px;
+border:1px solid #84DCC6;
+-webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.4);
+
+}
+
+.kotak:active{
+	border:2px solid #84DCC6;
+}
+
+.kotak:hover{
+	-webkit-box-shadow: 0 5px 3px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 5px 3px 0 rgba(0,0,0,0.4);
+}
+
+.kanan{
+float:left;
+margin-right:5px;
+margin-left:2px;
+}
+
+.creator{
+background-image: url("public/style/assets/CardCreator.png");
+  background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position:0px 22px;
+}
+
+.kiri{
+float:left;
+}
+
+
+.support{
+background-image: url("public/style/assets/CardSupport.png");
+background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position:0px 22px;
+}
+
+
+.tengah{
+width:375px;
+height:100%;
+margin:auto;
+}
+
+.panel{
+	width:100%;
+	height:100%;
+	float:left;
+}
+.tempatstep{
+	max-width:800;
+	max-height:100;
+	margin:auto;	
+	justify-content:center;
+}
+.container {
+      width: 100%;
+      margin: 25px auto; 
+	
+  }
+  .progressbar {
+		font-weight:bold;
+  }
+  .progressbar li {
+      list-style-type: none;
+      width: 31.5%;
+      float: left;
+      font-size: 12px;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+      color: black;
+  }
+  .progressbar li:before {
+      width: 40px;
+      height: 40;
+	  content:  "	 ";
+      line-height: 40px;
+      border: 2px solid #ffA69E;
+      display: block;
+      text-align: center;
+      margin: 0 auto 10px auto;
+      border-radius: 50%;
+      background-color: #ffA69E;
+	  font-size:30;
+	  color:white;
+
+  }
+  .progressbar li:after {
+      width: 100%;
+      height: 2px;
+      content: '';
+      position: absolute;
+      background-color: #ffA69E;
+      top: 20px;
+      left: -50%;
+      z-index: -1;
+  }
+  .progressbar li:first-child:after {
+      content: none;
+  }
+  .progressbar li.active {
+      color: black;
+  }
+  .progressbar li.active:before {
+      border-color: #ff686b;
+	  background-color:ff686b;
+	   content:  "\2713 ";
+  }
+  .progressbar li.active + li:after {
+      background-color: #ff686b;
+	
+  }
+  
+.kotaklink{
+	max-height:380;
+	max-width:360;
+background-color:white;
+border-radius:50px;
+border:1px solid #84DCC6;
+-webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.4);
+  margin: 25px auto;
+  
+}
+
+.kotakpaypal{
+max-height:380;
+	max-width:360;
+background-color:white;
+border-radius:50px;
+border:1px solid #84DCC6;
+-webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.4);
+  margin: 25px auto;
+}
+
+.button  {
+  background-color:#84DCC6;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 20px 20px 20px 20px;
+  margin: 5px 20px 0px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  font-weight:lightest;
+  width:70%;
+  height:30;
+  margin-bottom:20;	
+  font-size:20;
+  padding:5px 0 5px 0 	;
+  cursor:pointer;
+}
+
+.button:hover  {
+  background-color: #36a1d4;
+}
+
+button:active{
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+.judulatas{
+font-size:30;
+
+}
+
+.subjudul{
+font-size:19;
+}
+
+.subjudul2{
+font-size:16;
+}
+
+.spasi40{
+width:100%;
+height:40;
+}
+
+.spasi20{
+width:100%;
+height:20;
+}
+
+.oval{
+margin-top:30;
+padding:5px 10px 5px 10px;
+border-radius:25px;
+border:1px solid #84DCC6;
+margin:50px auto 40px auto;
+display:inline-block;
+}
+
+.ovalpaypal{
+padding:5px 70px 5px 70px;
+border-radius:25px;
+border:1px solid #84DCC6;
+margin:auto;
+display:inline-block;
+margin-bottom:15;
+margin-top:10;
+
+}
+
+
+.text{
+font-size:25;
+float: left;
+}
+
+.textpaypal{
+font-size:25;
+float: left;
+margin-left:20;
+margin-right:20;
+}
+
+.tosca{
+color:#A5FFD6;
+}
+
+#icon{ 
+   background:url(public/style/assets/iconOnly.png) left top; 
+   width:16px; 
+   height:16px;
+   display: block;
+   float: left;
+}
+
+input[type=text] {
+	border: none;
+	color: #A5FFD6;
+	outline: none;
+	text-decoration: none;
+	font-size:25;
+	width:190;
+	border:none;
+}
+
+input[type=text]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae
+	
+}
+
+::placeholder {
+  color: #A5FFD6;
+  opacity: 1; /* Firefox */
+}
+
+.ico{
+    display:inblock;
+    height:20px;
+    background:black;
+    color:white;
+    text-decoration:none;
+    padding-left:20px;
+	margin-right:20;
+}
+.ico:before{
+    content: '';
+    background:url("public/style/assets/iconOnly.png");
+    background-size:cover;
+        position:absolute;
+	background-size:110%;
+	background-position:top left;
+    width:35px;
+    height:30px;
+    margin-left:-20px;
+}
+
+.paypal{
+    display:inblock;
+    height:20px;
+    background:black;
+    color:white;
+    text-decoration:none;
+    padding-left:20px;
+	margin-right:20;
+}
+.paypal:before{
+    content: '';
+    background:url("public/style/assets/iconOnly.png");
+    background-size:cover;
+        position:absolute;
+	background-size:110%;
+	background-position:top left;
+    width:35px;
+    height:30px;
+    margin-left:-20px;
+}
+
+.ovo{
+    display:inblock;
+    height:20px;
+    background:white;
+    color:white;
+    text-decoration:none;
+    padding-left:20px;
+	margin-right:20;
+}
+.ovo:before{
+    content: '';
+    background:url("public/style/assets/OVO.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+        position:absolute;
+	background-size:100%;
+	background-position:top left;
+    width:80px;
+    height:50px;
+    margin-left:45px;
+}
+
+.gopay{
+  display:inblock;
+  height:20px;
+  background:white;
+  color:white;
+  text-decoration:none;
+  padding-left:20px;
+margin-right:20;
+}
+.gopay:before{
+  content: '';
+  background:url("public/style/assets/GOPAY.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+      position:absolute;
+background-size:100%;
+background-position:top left;
+  width:80px;
+  height:50px;
+  margin-left:45px;
+}
+
+.dana{
+  display:inblock;
+  height:20px;
+  background:white;
+  color:white;
+  text-decoration:none;
+  padding-left:20px;
+margin-right:20;
+}
+.dana:before{
+  content: '';
+  background:url("public/style/assets/DANA.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+      position:absolute;
+background-size:100%;
+background-position:top center;
+  width:80px;
+  height:50px;
+  margin-left:45px;
+}	
+
+
 }

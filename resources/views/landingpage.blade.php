@@ -14,7 +14,7 @@
 
 	<div class="judul1" onclick="openCity(event, 'beranda')" id="defaultOpen"><img class="namaatas" src="public/style/assets/LogoIcon.png"> </div>
 	<div class="tombolatas masuk" onclick="openCity(event, 'register')"> Daftar </div>
-	<div class="tombolatas" onclick="openCity(event, 'login')"> Masuk </div>
+	<div class="tombolatas login" onclick="openCity(event, 'login')"> Masuk </div>
 
 
 </div>
@@ -111,6 +111,29 @@
 				<div class="minitablatarfooter">
 				Aplikasi ini dibuat untuk memenuhi tugas mata kuliah PPL <br>
 				Adapun divisi perbagiannya adalah : <br>
+				<table class="tableteam">
+					<tr>
+						<td><img class="team" src="public/style/assets//Sarah.png"></td>
+						<td><img class="team" src="public/style/assets//Sheila.png"></td>
+						<td><img class="team" src="public/style/assets//Raissa.png"></td>
+						<td><img class="team" src="public/style/assets//yosua.jpg"></td>
+						<td><img class="team" src="public/style/assets//nazmi.jpg"></td>
+					</tr>
+					<tr>
+						<td>Sarah</td>
+						<td>Sheila</td>
+						<td>Raissa</td>
+						<td>Yoshua</td>
+						<td>Nazmi</td>
+					</tr>
+					<tr>
+						<td>Project Manager</td>
+						<td>UI/UX Designer</td>
+						<td>Front End</td>
+						<td>Front End</td>
+						<td>Back End</td>
+					</tr>
+				</table>
 				</div>
 				
 			</div>
