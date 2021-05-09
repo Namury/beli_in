@@ -20,7 +20,7 @@
 Apakah anda seorang kreator ?
 </div>
 	<div class="tengah">
-		<a href="regiscreator.html"><div class="kotak kiri creator">
+		<a href="regis_creator.html"><div class="kotak kiri creator">
 		</div></a>
 		<div class="kotak kanan support">
 		</div>
