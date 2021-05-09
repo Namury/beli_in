@@ -17,7 +17,6 @@ class ExploreController extends Controller
     
     public function index(){
         $posts = Post::with('user')->inRandomOrder()->limit(10)->get();
-        // dd($posts);
         return view('explore', ['posts' => $posts]);
     }
 }

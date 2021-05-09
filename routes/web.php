@@ -22,13 +22,16 @@ Route::get('/', 'AuthController@index');
 Route::get('/login', 'AuthController@login')->name('login');
 Route::get('/register/creator', 'AuthController@registerCreator');
 Route::get('/register/supporter', 'AuthController@registerSupporter');
+Route::get('/my-account', 'MyAccountController@index');
 Route::get('/logout', 'AuthController@logout');
 
 Route::post('/login', 'AuthController@loginAction');
 Route::post('/register/creator', 'AuthController@registerCreatorAction');
 Route::post('/register/supporter', 'AuthController@registerSupporterAction');
+Route::post('/follow/{id}', 'FollowController@index');
 
 //creator from supporter
+Route::get('{slug}/support', 'SupportController@index');
 Route::get('{slug}/post/{id}', 'PostController@show');
 
 //homepage

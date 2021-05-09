@@ -13,7 +13,7 @@
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
-        </select><button><a href="/post/create/category">Create Category</a></button><br>
+        </select><button class="button"><a href="/post/create/category">Create Category</a></button><br>
         <label for="content">Content:</label>
         <textarea name="content" id="editor" rows="10" cols="80" required></textarea><br>
         <input type="submit">
