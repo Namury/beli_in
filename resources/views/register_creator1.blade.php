@@ -21,19 +21,34 @@
     <div class="panel selainmap" id="register">
         <div id="formContent">
             <div id="formregister">
-                <div class="formplace">
+                <div class="formplacecreator">
                     <div class="judul">
-                        Daftar Supporter
+                        Daftar Creator
                     </div>
                     <div class="input">
-                        <form method="POST" action="/register/supporter">
+                        <form method="POST" action="/register/creator">
                             @csrf
                             <span class="forminfo">Name </span><br>
-                            <input type="text" id="Name" name="name">
+                            <input type="text" id="Name" name="name" required>
                             <span class="forminfo">Email </span><br>
-                            <input type="email" id="password" name="email">
+                            <input type="email" id="email" name="email" required>
                             <span class="forminfo">Password </span><br>
-                            <input type="password" id="password" name="password">
+                            <input type="password" id="password" name="password" required>
+                            <span class="forminfo">Expertise </span><br><br>
+                            <select name="user_type_id" id="user_type_id" required>
+                                <option disabled selected> - select one - </option>
+                                @foreach ($user_types as $user_type)
+                                    <option value="{{ $user_type->id }}">{{ $user_type->name }}</option>
+                                @endforeach
+                            </select><br>
+                            <span class="forminfo">Page Name </span><br>
+                            @if ($page_name != null)
+                                <input type="text" name="page_name" value="{{ $page_name }}" required><br>
+                            @else
+                                <input type="text" name="page_name" required><br>
+                            @endif
+                            <span class="forminfo">Description </span><br>
+                            <textarea name="description" cols="30" rows="5" required></textarea><br>
                             <div class="spasi"></div>
                             <input type="submit" value="Daftar">
                         </form>

@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 //auth
 Route::get('/', 'AuthController@index');
 Route::get('/login', 'AuthController@login')->name('login');
+Route::get('/register', 'AuthController@registerOption');
 Route::get('/register/creator', 'AuthController@registerCreator');
 Route::get('/register/supporter', 'AuthController@registerSupporter');
 Route::get('/my-account', 'MyAccountController@index');

@@ -491,7 +491,7 @@ img {
   background-color: white;
   overflow: hidden;
   width:100%;
-  background-image: url("public/style/assets/BG.png");
+  background-image: url("assets/BG.png");
   background-size: cover;
   background-position: bottom;
   background-size: 100%;
@@ -570,7 +570,19 @@ img {
 }
 
 .formplace{
-height:460;
+height:620;
+width:380;
+border:2px solid #84DCC6;
+margin:auto;
+padding-top:55;
+border-radius:50px;
+-webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 5px 5px 0 rgba(95,186,233,0.4);
+background-color:white;
+}
+
+.formplacecreator{
+height:1000;
 width:380;
 border:2px solid #84DCC6;
 margin:auto;
@@ -652,7 +664,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text], input[type=email] {
   border: 2px solid #84DCC6;
   color: #0d0d0d;
   padding: 15px 32px;
@@ -673,12 +685,12 @@ input[type=text] {
   border-radius: 20px 20px 20px 20px;
 }
 
-input[type=text]:focus {
+input[type=text], input[type=email]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder {
+input[type=text], input[type=email]:placeholder {
   color: #cccccc;
 }
 
@@ -1279,7 +1291,7 @@ img {
   background-color: white;
   overflow: hidden;
   width:100%;
-  background-image: url("public/style/assets/BG.png");
+  background-image: url("assets/BG.png");
   background-size: cover;
   background-position: -200px 150px;
   background-size: 400%;
@@ -1439,7 +1451,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text], input[type=email] {
   border: 2px solid #84DCC6;
   color: #0d0d0d;
   padding: 15px 32px;
@@ -1460,12 +1472,12 @@ input[type=text] {
   border-radius: 20px 20px 20px 20px;
 }
 
-input[type=text]:focus {
+input[type=text], input[type=email]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder {
+input[type=text], input[type=email]:placeholder {
   color: #cccccc;
 }
 

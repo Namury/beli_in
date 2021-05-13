@@ -18,7 +18,7 @@
 	}
 	
 	.pertama{
-		background-image: url("public/style/assets/BGPertama.png");
+		background-image: url("assets/BGPertama.png");
 		background-color:white;
 		background-size:100%;
 		background-position:bot;
@@ -26,7 +26,7 @@
 		}
 		
 	.kedua{
-		background-image: url("public/style/assets/BGKedua.png");
+		background-image: url("assets/BGKedua.png");
 		background-color:white;
 		background-size:100%;
 		background-position:bot;
@@ -34,7 +34,7 @@
 		}	
 	
 	.ketiga{
-		background-image: url("public/style/assets/BGKetiga.png");
+		background-image: url("assets/BGKetiga.png");
 		background-color:white;
 		background-size:100%;
 		background-position:bot;
@@ -43,7 +43,7 @@
 		}	
 		
 	.keempat{
-		background-image: url("public/style/assets/BGKeempat.png");
+		background-image: url("assets/BGKeempat.png");
 		background-color:white;
 		background-size:100%;
 		background-position:bot;
@@ -105,7 +105,7 @@
 	}
 	
 	.pertama{
-		background-image: url("public/style/assets/BGPertama.png");
+		background-image: url("assets/BGPertama.png");
 		background-color:white;
 		background-size:100%;
 		background-position:0px 90px;
@@ -114,7 +114,7 @@
 		}
 		
 	.kedua{
-		background-image: url("public/style/assets/BGKedua.png");
+		background-image: url("assets/BGKedua.png");
 		background-color:white;
 		background-position:-80px 35px;
 		background-size: 150%;
@@ -122,7 +122,7 @@
 		}	
 	
 	.ketiga{
-		background-image: url("public/style/assets/BGKetiga.png");
+		background-image: url("assets/BGKetiga.png");
 		background-color:white;
 		background-size:200%;
 		background-position:-20px 400px;
@@ -131,7 +131,7 @@
 		}	
 		
 	.keempat{
-		background-image: url("public/style/assets/BGKeempat.png");
+		background-image: url("assets/BGKeempat.png");
 		background-color:white;
 		background-size:190%;
 		background-position:-320px 400px;
