@@ -19,7 +19,7 @@ class CreateSupportsTable extends Migration
             $table->foreignId('supported');
             $table->foreignId('item_id')->constrained();
             $table->integer('amount');
-            $table->float('total_price');
+            $table->float('total_price', 20, 2);
             $table->timestamps();
 
             $table->foreign('supporter')->references('id')->on('users');

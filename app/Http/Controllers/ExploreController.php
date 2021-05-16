@@ -12,7 +12,7 @@ use App\Models\User;
 class ExploreController extends Controller
 {
     public function __construct() {
-
+        $this->middleware('auth', ['except' => []]);
     }
     
     public function index(){

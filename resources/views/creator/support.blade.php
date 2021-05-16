@@ -25,7 +25,7 @@
 Post:
 <ul>
     @foreach ($posts as $post)
-        <li><a href="{{ $post->user->page_slug }}/post/{{ $post->id }}"> {{ $post->title }}</a></li>
+        <li><a href="/{{ $post->user->page_slug }}/post/{{ $post->id }}"> {{ $post->title }}</a></li>
     @endforeach
 </ul>
 @endsection
