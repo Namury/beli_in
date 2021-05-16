@@ -20,6 +20,8 @@
         <button>Follow</button>
     </form>
 @endif
+
+<button><a href="/{{ $creator->page_slug }}/order">Support</a></button><br>
 Post:
 <ul>
     @foreach ($posts as $post)

@@ -19,12 +19,12 @@ class Support extends Model
         return $this->belongsTo(Item::class, 'item_id');
     }
 
-    public function supporter()
+    public function supporterDetail()
     {
         return $this->belongsTo(User::class, 'supporter');
     }
 
-    public function supported()
+    public function supportedDetail()
     {
         return $this->belongsTo(User::class, 'Supported');
     }

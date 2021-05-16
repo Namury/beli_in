@@ -33,13 +33,26 @@ Route::post('/follow/{id}', 'FollowController@index');
 
 //creator from supporter
 Route::get('{slug}/support', 'SupportController@index');
+Route::get('{slug}/order', 'SupportController@order');
 Route::get('{slug}/post/{id}', 'PostController@show');
+
+Route::post('{slug}/order', 'SupportController@orderAction');
 
 //homepage
 Route::get('/homepage', 'HomepageController@index');
 
 //dashboard
 Route::get('/dashboard', 'DashboardController@index');
+Route::get('/supporter', 'SupportController@getSupporter');
+Route::get('/setting', 'SettingController@index');
+
+//item
+
+Route::get('/item/create', 'SettingController@createItem');
+Route::get('/item/{id}/edit', 'SettingController@editItem');
+Route::post('/item/create', 'SettingController@createItemAction');
+Route::patch('/item/{id}/edit', 'SettingController@editItemAction');
+Route::delete('item/{id}/delete', 'SettingController@deleteItem');
 
 //explore
 Route::get('/explore', 'ExploreController@index');

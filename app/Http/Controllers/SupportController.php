@@ -9,6 +9,10 @@ use Exception;
 
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Item;
+use App\Models\Support;
+
+use Midtrans\Midtrans;
 
 class SupportController extends Controller
 {
@@ -27,9 +31,111 @@ class SupportController extends Controller
         return view('creator.support', ['creator' => $creator, 'posts' => $posts]);
     }
     
-    public function support()
+    public function getSupporter()
     {
+        $supporters = Support::with('supporterDetail')->where('supported', Auth::user()->id)->get();
+        return view('creator.supporter', ['supporters' => $supporters]);
+    }
+
+    public function order($slug)
+    {
+        $creator = User::with('items')->where('page_slug', $slug)->first();
+        return view('creator.order', ['creator' => $creator]);
+    }
+
+    public function orderAction(Request $request)
+    {
+        \Midtrans\Config::$serverKey = config('services.midtrans.server_key');
+
+        $item_details = array();
+
+        foreach($request->all() as $key=>$amount){
+            if($key != "_token"){
+                $arr = explode('amount', $key);
+                $items[(int)$arr[1]] = $amount;
+            }
+        }
         
+        foreach($items as $item_id=>$amount)
+        {
+            $item = Item::where('id', $item_id)->first();
+
+            $item_details[] = array(
+                'id' => $item->id,
+                'price' => $item->price,
+                'quantity' => $amount,
+                'name' => $item->name
+            );
+        }
+
+        $transaction_details = array(
+            'order_id' => rand(),
+        );
+
+        $params = array(
+            'transaction_details' => $transaction_details,
+            'item_details' => $item_details,
+        );
+        
+        try {
+          // Get Snap Payment Page URL
+          $paymentUrl = \Midtrans\Snap::createTransaction($params)->redirect_url;
+          
+          // Redirect to Snap Payment Page
+          header('Location: ' . $paymentUrl);
+          return redirect($paymentUrl);
+        }
+        catch (Exception $e) {
+          echo $e->getMessage();
+        }
+    }
+
+    public function midtransCart()
+    {
+        \Midtrans\Config::$serverKey = config('services.midtrans.server_key');
+
+        $cart = Cart::where('user_id', Auth::user()->id)->with(['items','extras'])->first();
+        $item_details = array();
+        if($cart != null){
+            foreach($cart->items as $item){
+                $item_details[] = array(
+                    'id' => $item->items->id,
+                    'price' => $item->items->price,
+                    'quantity' => $item->amount,
+                    'name' => $item->items->name
+                );
+            }
+
+            foreach($cart->extras as $extra){
+                $item_details[] = array(
+                    'id' => $extra->extras->id,
+                    'price' => $extra->extras->price,
+                    'quantity' => 1,
+                    'name' => $extra->extras->name
+                );
+            }
+        }
+
+        $transaction_details = array(
+            'order_id' => rand(),
+        );
+
+        $params = array(
+            'transaction_details' => $transaction_details,
+            'item_details' => $item_details,
+        );
+        
+        try {
+          // Get Snap Payment Page URL
+          $paymentUrl = \Midtrans\Snap::createTransaction($params)->redirect_url;
+          
+          // Redirect to Snap Payment Page
+          header('Location: ' . $paymentUrl);
+          return redirect($paymentUrl);
+        }
+        catch (Exception $e) {
+          echo $e->getMessage();
+        }
     }
 
 }
