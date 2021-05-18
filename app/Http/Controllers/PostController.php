@@ -27,7 +27,10 @@ class PostController extends Controller
             if(strpos($post->content, '. '))
                 $post->content = substr($post->content, 0, strpos($post->content, '. ', strpos($post->content, '. ')+1)+1);
         }
-        return view('creator.post', ['creator' => $creator, 'posts' => $posts]);
+        
+        $categories = PostCategory::where('user_id', Auth::user()->id)->get();
+        
+        return view('creator.mypost', ['creator' => $creator, 'posts' => $posts, 'categories' => $categories]);
     }
 
     public function show($slug, $id)
@@ -52,6 +55,11 @@ class PostController extends Controller
             $post->title = $request->title;
             $post->content = $request->content;
             $post->post_category_id = $request->category;
+            
+            if($request->has('image')) {
+                $post->image = $image->store('post', 'public');
+            }
+            
             $post->save();
 
             DB::commit();

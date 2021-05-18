@@ -20,7 +20,7 @@ class SettingController extends Controller
     public function index()
     {
         $items = Item::where('user_id', Auth::user()->id)->get();
-        return view('creator.setting', ['items' => $items]);
+        return view('creator.pengaturan_creator', ['items' => $items]);
     }
 
     public function createItem()

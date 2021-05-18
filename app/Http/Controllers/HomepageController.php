@@ -16,7 +16,7 @@ class HomepageController extends Controller
     public function index()
     {
         $posts = Post::with('user')->inRandomOrder()->limit(10)->get();
-        return view('supporter.homepage', ['posts' => $posts]);
+        return view('supporter.home_supporter', ['posts' => $posts]);
     }
 
 }

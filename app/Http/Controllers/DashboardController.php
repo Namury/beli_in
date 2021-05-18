@@ -18,6 +18,7 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('creator.dashboard');
+        $posts = Post::with('user')->where('user_id', Auth::user()->id)->get();
+        return view('creator.home_creator', ['posts' => $posts]);
     }
 }

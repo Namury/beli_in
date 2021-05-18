@@ -38,7 +38,7 @@ class SupportController extends Controller
         foreach($supporters as $supporter){
             $total =+ $total + $supporter->total_price;
         }
-        return view('creator.supporter', ['supporters' => $supporters, 'total' => $total]);
+        return view('creator.supporters_creator', ['supporters' => $supporters, 'total' => $total]);
     }
 
     public function order($slug)
@@ -101,10 +101,7 @@ class SupportController extends Controller
         
         
         try {
-
-            
             $paymentUrl = \Midtrans\Snap::createTransaction($params)->redirect_url;
-            
             // Redirect to Snap Payment Page
             header('Location: ' . $paymentUrl);
             return redirect($paymentUrl);

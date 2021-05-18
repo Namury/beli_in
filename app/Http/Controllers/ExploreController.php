@@ -20,10 +20,10 @@ class ExploreController extends Controller
         
         if(Auth::user()->user_role_id == 1){
             
-            return view('explore_creator', ['users' => $users]);
+            return view('creator.explore_creator', ['users' => $users]);
         }
         if(Auth::user()->user_role_id == 2){
-            return view('explore_supporter', ['users' => $users]);
+            return view('supporter.explore_supporter', ['users' => $users]);
         }
     }
 }
