@@ -101,27 +101,6 @@
             </div>
 
 
-            @foreach ($users as $user)
-                <div class="card card-creator creator1">
-                    <div class="creator-wrap">
-                        <div class="creator-avatar avatar">
-                            <a href="/{{ $user->page_slug}}/support""><img class="" src="https://picsum.photos/50/50" alt=""></a>
-                        </div>
-                        <div class="creator-profile">
-                            <p>{{ $user->name}}</p>
-                            <a class="handle" href="/{{ $user->page_slug}}/support">@ {{ $user->page_name}}</a>
-                            <p class="small">{{ $user->description }}</p>
-                        </div>
-                    </div>
-                    <div class="love-creator">
-                        <img src="{{ asset('style/assets/love-creator.svg') }}" alt="">
-                        <p class="small">{{ count($user->follower)}}</p>
-                    </div>
-                </div>
-            @endforeach
-            
-
-
             <div class="card card-creator creator1">
                 <div class="creator-wrap">
                     <div class="creator-avatar avatar">

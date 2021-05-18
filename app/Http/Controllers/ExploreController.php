@@ -16,7 +16,14 @@ class ExploreController extends Controller
     }
     
     public function index(){
-        $posts = Post::with('user')->inRandomOrder()->limit(10)->get();
-        return view('explore', ['posts' => $posts]);
+        $users = User::with('follower')->where('user_role_id', 1)->inRandomOrder()->limit(10)->get();
+        
+        if(Auth::user()->user_role_id == 1){
+            
+            return view('explore_creator', ['users' => $users]);
+        }
+        if(Auth::user()->user_role_id == 2){
+            return view('explore_supporter', ['users' => $users]);
+        }
     }
 }

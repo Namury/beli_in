@@ -11,36 +11,34 @@
     <link rel="stylesheet" href="{{ asset('style/css/styles.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;400&family=Salsa&display=swap" rel="stylesheet">
-    <title>Explore</title>
+    <title>Supporters</title>
 </head>
 
 <body>
     <nav class="navbar fixed-top justify-content-between">
         <div class="logo">
-            <img src="{{ asset('style/assets/logo.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
+            <img src="{{ asset('style/assets/logo.svg') }}" width="40" height="" class="d-inline-block align-top" alt="">
             <a class="brand" href="#">
              Beli.in
         </a>
         </div>
-        <div>
-            <a class="profile" href="#">
-                <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
-            </a>
-        </div>
+        <a class="profile" href="#">
+            <img src="{{ asset('style/assets/profile.svg') }}" width="40" height="" class="d-inline-block align-top" alt="">
+        </a>
     </nav>
 
     <div class="wrapper">
         <nav class="sidebar">
 
             <ul class="list-unstyled components">
-                <li>
-                    <a href="#"><svg width="" height="" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <li class="">
+                    <a href="#"><svg width="30" height="" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24.0625 3.70119C23.7792 3.82815 20.7714 6.82619 12.9296 14.7949C7.0312 20.791 2.09956 25.8594 1.98237 26.0547C1.47456 26.8848 1.63081 27.9785 2.35347 28.7012C3.03706 29.3848 4.01362 29.5313 4.89253 29.0918C5.10737 28.9844 8.83784 25.2637 14.1503 19.8535C19.0527 14.8731 23.2519 10.625 23.496 10.4297C24.2187 9.83401 25.0878 9.71682 25.9179 10.1074C26.1523 10.2246 29.4042 13.4668 35.4101 19.5703C42.3925 26.6699 44.6582 28.9258 45.0488 29.1309C45.4882 29.375 45.6347 29.4043 46.1425 29.3653C46.8945 29.3067 47.4804 29.0137 47.8515 28.4961C48.4082 27.7344 48.4668 26.8067 48.0175 26.0645C47.9003 25.8594 44.3359 22.168 40.0976 17.8516C27.7343 5.27346 26.3574 3.89651 25.9277 3.70119C25.4199 3.46682 24.58 3.46682 24.0625 3.70119Z" fill="black"/>
                         <path d="M24.4336 13.3984C24.3066 13.4668 20.6445 17.1484 16.2988 21.5723L8.39844 29.6191V37.6562C8.39844 43.2324 8.42773 45.7617 8.50586 45.9277C8.56445 46.0547 8.73047 46.2305 8.88672 46.3184C9.13086 46.4648 9.69727 46.4844 14.6191 46.4844C19.502 46.4844 20.0977 46.4648 20.3027 46.3281C20.791 45.9863 20.8008 45.8496 20.8008 40.957V36.4062L21.1328 36.0742L21.4648 35.7422H25H28.5352L28.8672 36.0742L29.1992 36.4062V40.957C29.1992 45.8496 29.209 45.9863 29.6973 46.3281C29.9023 46.4648 30.498 46.4844 35.3711 46.4844C39.0723 46.4844 40.8887 46.4551 41.0449 46.377C41.1719 46.3184 41.3477 46.1523 41.4355 45.9961C41.5918 45.7422 41.6016 45.0098 41.6016 37.6758V29.6387L38.7402 26.7578C37.168 25.1758 33.5449 21.5137 30.6934 18.6133C25.6055 13.457 25.498 13.3594 25.0879 13.3105C24.8438 13.291 24.5605 13.3301 24.4336 13.3984Z" fill="black"/>
                     </svg>
                     Homepage</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="#">
                         <svg width="30" height="" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M26.9532 4.70702C23.9454 5.21484 20.6836 6.89453 18.4571 9.10156C13.6133 13.8672 12.3243 21.3867 15.3321 27.3437L16.0547 28.7695L10.6837 34.1601C7.73443 37.1289 5.17584 39.8242 5.00006 40.1758C4.60943 40.9375 4.5899 42.6172 4.96099 43.3203C5.27349 43.9258 6.1524 44.7656 6.7774 45.0976C7.4024 45.4101 9.10162 45.3515 9.82428 45C10.1758 44.8242 12.8711 42.2656 15.8399 39.3164L21.2305 33.9453L22.6563 34.668C24.9415 35.8203 26.6407 36.1914 29.5899 36.1914C32.5782 36.1914 34.2383 35.8203 36.6407 34.6094C40.7422 32.5586 43.6719 28.9648 44.961 24.4922C45.5274 22.4609 45.586 18.5547 45.0391 16.6016C42.793 8.41796 35.0977 3.35937 26.9532 4.70702ZM32.4024 9.39453C34.8633 9.99999 37.4024 11.7773 38.8868 13.9648C42.0118 18.5351 41.4649 24.5312 37.5782 28.3984C35.4493 30.5469 32.6368 31.6992 29.5899 31.6992C24.4727 31.6992 20.1172 28.3789 18.6329 23.3398C18.1836 21.7773 18.1836 19.043 18.6329 17.4805C20.1758 12.2461 24.961 8.74999 30.1563 9.10156C30.8985 9.14062 31.8946 9.27734 32.4024 9.39453Z" fill="black"/>
@@ -62,7 +60,7 @@
                             </svg> My Posts
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="#">
                         <svg width="30" height="" viewBox="0 0 52 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M26 47.2183C25.2597 47.2183 24.5459 46.9604 23.9897 46.492C21.8891 44.7258 19.8638 43.066 18.0769 41.6019L18.0678 41.5943C12.829 37.3016 8.3051 33.5945 5.15746 29.9427C1.63888 25.8602 0 21.9894 0 17.7608C0 13.6524 1.46512 9.86214 4.12518 7.08771C6.81697 4.28047 10.5105 2.73438 14.5266 2.73438C17.5282 2.73438 20.2772 3.64685 22.6968 5.44624C23.9179 6.35452 25.0248 7.46613 26 8.76274C26.9755 7.46613 28.082 6.35452 29.3035 5.44624C31.7231 3.64685 34.4721 2.73438 37.4737 2.73438C41.4894 2.73438 45.1833 4.28047 47.8751 7.08771C50.5352 9.86214 51.9999 13.6524 51.9999 17.7608C51.9999 21.9894 50.3614 25.8602 46.8428 29.9423C43.6952 33.5945 39.1717 37.3013 33.9337 41.5936C32.1437 43.0599 30.1152 44.7224 28.0098 46.4928C27.454 46.9604 26.7398 47.2183 26 47.2183ZM14.5266 5.6633C11.3714 5.6633 8.47292 6.87408 6.36431 9.07288C4.22436 11.3049 3.04568 14.3902 3.04568 17.7608C3.04568 21.3173 4.42034 24.498 7.50252 28.0739C10.4815 31.5304 14.9126 35.1612 20.0431 39.3654L20.0526 39.373C21.8462 40.8428 23.8794 42.5091 25.9956 44.2883C28.1244 42.5056 30.1608 40.8367 31.958 39.3646C37.0881 35.1604 41.5188 31.5304 44.4978 28.0739C47.5796 24.498 48.9542 21.3173 48.9542 17.7608C48.9542 14.3902 47.7755 11.3049 45.6356 9.07288C43.5274 6.87408 40.6285 5.6633 37.4737 5.6633C35.1624 5.6633 33.0403 6.36978 31.1665 7.76291C29.4967 9.00497 28.3335 10.5751 27.6515 11.6737C27.3008 12.2387 26.6835 12.5759 26 12.5759C25.3164 12.5759 24.6991 12.2387 24.3484 11.6737C23.6668 10.5751 22.5036 9.00497 20.8334 7.76291C18.9596 6.36978 16.8375 5.6633 14.5266 5.6633Z" fill="black"/>
@@ -83,7 +81,7 @@
                             <rect width="51" height="52" fill="white"/>
                             </clipPath>
                             </defs>
-                            </svg> Supporters
+                            </svg> Pengaturan
                     </a>
                 </li>
                 <li>
@@ -104,114 +102,89 @@
                     </a>
                 </li>
             </ul>
+
+
+
         </nav>
 
         <div class="main">
 
-            <div class="card card-explore">
-                <div class="explore-desc">
-                    <h1>Eksplor Kreator</h1>
-                    <p>Jelajahi para kreator terbaik di seluruh Indonesia</p>
-                </div>
-                <div class="search">
-                    <div class="search-bar">
-                        <input type="search" class="search-input" placeholder="Cari Kreator">
-                        <button class="search-button">
-                            <svg class="submit-button" width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.2089 3.813C17.9537 4.20476 15.5081 5.50059 13.8386 7.20325C10.2068 10.8798 9.24029 16.6809 11.4955 21.2766L12.0374 22.3765L8.01017 26.5352C5.79887 28.8255 3.88046 30.9049 3.74867 31.1761C3.45578 31.7637 3.44113 33.0596 3.71938 33.602C3.95369 34.0691 4.61268 34.717 5.0813 34.9732C5.54992 35.2142 6.82398 35.169 7.36582 34.8978C7.62942 34.7622 9.65034 32.7883 11.8763 30.5131L15.9181 26.3695L16.9872 26.927C18.7005 27.816 19.9746 28.1023 22.1859 28.1023C24.4265 28.1023 25.6712 27.816 27.4725 26.8818C30.5478 25.2996 32.7445 22.5272 33.711 19.0767C34.1357 17.5096 34.1796 14.4961 33.7696 12.9893C32.0855 6.67588 26.3156 2.77332 20.2089 3.813ZM24.2947 7.42927C26.1399 7.89637 28.0436 9.26754 29.1566 10.9551C31.4997 14.481 31.0897 19.1068 28.1754 22.0902C26.5792 23.7477 24.4704 24.6367 22.1859 24.6367C18.3491 24.6367 15.0834 22.0751 13.9704 18.1877C13.6336 16.9822 13.6336 14.8727 13.9704 13.6673C15.1273 9.62916 18.7152 6.93203 22.6106 7.20325C23.1671 7.23339 23.9139 7.33886 24.2947 7.42927Z" fill="#84DCC6"/>
-                                <path d="M22.7566 9.35795C22.3319 9.55384 21.8193 10.247 21.8193 10.6387C21.8193 11.3318 22.3465 11.8893 23.2252 12.1606C24.3675 12.5071 25.4365 13.592 25.8905 14.918C26.2273 15.8371 26.6959 16.3042 27.2963 16.3042C28.1018 16.3042 28.8047 15.3248 28.629 14.4509C28.1018 11.8893 24.3821 8.66484 22.7566 9.35795Z" fill="#84DCC6"/>
-                            </svg>                            
-                        </button>
+            <div class="suporters card">
+                <div class="suporters-infowrap">
+                    <div class="suporters-info card sup-info">
+                        <h2>25</h2>
+                        <span><img src="{{ asset('style/assets/heart.svg') }}" width="20px" alt=""> Suporter</span>
                     </div>
-
-                    <div class="category">
-                        <a href="">Penyanyi</a>
-                        <a href="">Youtuber</a>
-                        <a href="">Streamer</a>
-                        <a href="">Pelukis</a>
-                        <a href="">Fotografer</a>
-                        <a href="">Penari</a>
-                        <a href="">Gitaris</a>
-                        <a href="">Editor</a>
-                        <a href="">Penulis</a>
+                    <div class="suporters-info card hari">
+                        <h2>RP. 75.000</h2>
+                        <span>30 hari terakhir</span>
+                    </div>
+                    <div class="suporters-info card jumlah">
+                        <h2>RP. 75.000</h2>
+                        <span>Jumlah</span>
                     </div>
                 </div>
-            </div>
-
-
-            @foreach ($users as $user)
-                <div class="card card-creator creator1">
-                    <div class="creator-wrap">
-                        <div class="creator-avatar avatar">
-                            <a href="/{{ $user->page_slug}}/support""><img class="" src="https://picsum.photos/50/50" alt=""></a>
+                <h3>Suportermu</h3>
+                <div class="suporter-list">
+                    <div class="suporter card">
+                        <div class="suporter-info">
+                            <div class="profil-images">
+                                <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
+                            </div>
+                            <div class="text">
+                                <p><span style="font-weight:bold">Mawar</span>, beliin <span>1 kopi</span> untuk kamu seharga <span>Rp. 25.000,00</span></p>
+                            </div>
                         </div>
-                        <div class="creator-profile">
-                            <p>{{ $user->name}}</p>
-                            <a class="handle" href="/{{ $user->page_slug}}/support">@ {{ $user->page_name}}</a>
-                            <p class="small">{{ $user->description }}</p>
+                        <div class="icon">
+                            <img src="{{ asset('style/assets/kopi.svg') }}" width="50px" alt="">
                         </div>
                     </div>
-                    <div class="love-creator">
-                        <img src="{{ asset('style/assets/love-creator.svg') }}" alt="">
-                        <p class="small">{{ count($user->follower)}}</p>
+                    <div class="suporter card">
+                        <div class="suporter-info">
+                            <div class="profil-images">
+                                <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
+                            </div>
+                            <div class="text">
+                                <p><span style="font-weight:bold">Mawar</span>, beliin <span>1 kopi</span> untuk kamu seharga <span>Rp. 25.000,00</span></p>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <img src="{{ asset('style/assets/kopi.svg') }}" width="50px" alt="">
+                        </div>
                     </div>
-                </div>
-            @endforeach
-            
-            <div class="card card-creator creator1">
-                <div class="creator-wrap">
-                    <div class="creator-avatar avatar">
-                        <a href=""><img class="" src="https://picsum.photos/50/50" alt=""></a>
+                    <div class="suporter card">
+                        <div class="suporter-info">
+                            <div class="profil-images">
+                                <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
+                            </div>
+                            <div class="text">
+                                <p><span style="font-weight:bold">Mawar</span>, beliin <span>1 kopi</span> untuk kamu seharga <span>Rp. 25.000,00</span></p>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <img src="{{ asset('style/assets/kopi.svg') }}" width="50px" alt="">
+                        </div>
                     </div>
-                    <div class="creator-profile">
-                        <p>Feby Putri</p>
-                        <a class="handle" href="">@febyputri</a>
-                        <p class="small">Penyanyi Cover Lagu</p>
+                    <div class="suporter card">
+                        <div class="suporter-info">
+                            <div class="profil-images">
+                                <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
+                            </div>
+                            <div class="text">
+                                <p><span style="font-weight:bold">Mawar</span>, beliin <span>1 kopi</span> untuk kamu seharga <span>Rp. 25.000,00</span></p>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <img src="{{ asset('style/assets/kopi.svg') }}" width="50px" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="love-creator">
-                    <img src="{{ asset('style/assets/love-creator.svg') }}" alt="">
-                    <p class="small">520</p>
-                </div>
-            </div>
-
-            <div class="card card-creator creator1">
-                <div class="creator-wrap">
-                    <div class="creator-avatar avatar">
-                        <a href=""><img class="" src="https://picsum.photos/50/50" alt=""></a>
-                    </div>
-                    <div class="creator-profile">
-                        <p>Feby Putri</p>
-                        <a class="handle" href="">@febyputri</a>
-                        <p class="small">Penyanyi Cover Lagu</p>
-                    </div>
-                </div>
-                <div class="love-creator">
-                    <img src="{{ asset('style/assets/love-creator.svg') }}" alt="">
-                    <p class="small">520</p>
-                </div>
-            </div>
-
-            <div class="card card-creator creator1">
-                <div class="creator-wrap">
-                    <div class="creator-avatar avatar">
-                        <a href=""><img class="" src="https://picsum.photos/50/50" alt=""></a>
-                    </div>
-                    <div class="creator-profile">
-                        <p>Feby Putri</p>
-                        <a class="handle" href="">@febyputri</a>
-                        <p class="small">Penyanyi Cover Lagu</p>
-                    </div>
-                </div>
-                <div class="love-creator">
-                    <img src="{{ asset('style/assets/love-creator.svg') }}" alt="">
-                    <p class="small">520</p>
                 </div>
             </div>
 
         </div>
 
-
+    </div>
+    </div>
     </div>
 
 
