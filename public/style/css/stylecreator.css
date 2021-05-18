@@ -1042,9 +1042,25 @@ textarea:focus {
 	 user-select: none;      
 }
 
-.create-image{
-	float:left;
-	background-image: url('assets/uploadkarya.svg'); 
+.upload-images {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.upload-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.custom-gambar input[type='file'] {
+    display: none;
+}
+
+.custom-gambar label {
+    float:left;
+	background-image: url('uploadkarya.png'); 
 	background-repeat: no-repeat;
 	background-size:30px;
 	margin:5px 2.5px 5px 32.5px;
@@ -1052,11 +1068,16 @@ textarea:focus {
 	width:32px;
 	background-position: 0px 7.5px;
 	cursor:pointer;
-	user-select: none;      
+	user-select: none; 
 }
-.create-video{
-	float:left;
-	background-image: url('assets/uploadvid.svg'); 
+
+.custom-video input[type='file'] {
+    display: none;
+}
+
+.custom-video label {
+    float:left;
+	background-image: url('uploadvid.png'); 
 	background-repeat: no-repeat;
 	background-size:30px;
 	margin:5px 2.5px 5px 5px;
@@ -1064,11 +1085,16 @@ textarea:focus {
 	width:32px;
 	background-position: 0px 7.5px;
 	cursor:pointer;
-	user-select: none;      
+	user-select: none; 
 }
-.Create-lain{
-	float:left;
-	background-image: url('assets/uploadlain.svg'); 
+
+.custom-lain input[type='file'] {
+    display: none;
+}
+
+.custom-lain label {
+    float:left;
+	background-image: url('uploadlain.png'); 
 	background-repeat: no-repeat;
 	background-size:30px;
 	margin:5px 2.5px 5px 5px;
@@ -1076,7 +1102,7 @@ textarea:focus {
 	width:32px;
 	background-position: 0px 7.5px;
 	cursor:pointer;
-	user-select: none;
+	user-select: none; 
 }
 
 }
