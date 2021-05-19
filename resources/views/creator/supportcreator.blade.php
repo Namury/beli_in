@@ -41,22 +41,39 @@
                     <div class="profile-info">
 				
                         <div class="large kiri">
-                            Feby Putri
+                            {{ $creator->name }}
 							
                         </div>
                         <div class="handle">
-                            <a href="">@febyputri</a>
+                            <a href="">@ {{ $creator->page_slug }}</a>
 							</div>
 		
                         <div class="tentang">
-						<p>Penyanyi Cover Lagu </p>
+						<p>{{ $creator->description }}</p>
 						</div>
 						<div class="jmlSupporter">
-						520 Supporter
+						{{ count($supporters )}} Supporter
 						</div>
                        <div class="buttonplace">
 					<button class="btn support" onclick="openNav()" type="submit">Support</button>
-					<button class="btn following" ID="followbtn" type="submit">Follow</button>
+
+					@if (Auth::user() != null)
+						@if (Auth::user()->id == $creator->id)
+							<button class="btn following" ID="followbtn" type="submit" disabled>Follow</button>
+						@elseif (App\Models\Follow::where([['follower', Auth::user()->id], ['followed', $creator->id]])->first() != null) 
+							<button class="btn following" ID="followbtn" type="submit" disabled>Follow</button>
+						@else
+							<form method="POST" action="/follow/{{$creator->id }}">
+								@csrf
+								<button class="btn following" ID="followbtn" type="submit">Follow</button>
+							</form>
+						@endif
+						@else
+							<form method="POST" action="/follow/{{$creator->id }}">
+								@csrf
+								<button class="btn following" ID="followbtn" type="submit">Follow</button>
+							</form>
+					@endif
 					
 					</div> 
                     </div>
@@ -101,7 +118,7 @@
 		<div class="card-post-donasi">
                 
 					<div class="card-donasi">
-					<p class="center">Beliin Feby </p>
+					<p class="center">Beliin {{ $creator->name }} </p>
 					
 				
 						<div class="donasi">
@@ -150,7 +167,7 @@
   <a href="javascript:void(0)"  class="closebtn" onclick="closeNav()" >&times;</a>
   <div class="overlay-content">
     <div class="card-overlay">
-					<h3 class="center">Kamu Beliin Feby </h3>
+					<h3 class="center">Kamu Beliin {{ $creator->name }} </h3>
 					
 					<div class="formdonasi">
 					<div class="row">
