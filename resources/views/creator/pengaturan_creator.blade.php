@@ -122,7 +122,7 @@
 
                 <hr>
 
-                <form>
+                {{-- <form>
                     <h4>Metode Pembayaran</h4>
                     <div class="buttonpay">
                         <div class="ovo"></div>
@@ -144,11 +144,37 @@
                     </div>
                 </form>
 
-                <hr>
-
-                <form>
+                <hr> --}}
+                <a href="/item/create"><div class="buttonnew">Tambah Item</div></a>
+                <form method="POST" enctype="multipart/form-data" action="/item/edit" id="form1">
+                    @csrf
+                    <input type="hidden" name="_method" value="PATCH" form="form1">
+                    
                     <h4>Harga</h4>
                     <table class="tableharga">
+                        @foreach ($items as $item)
+                            @php
+                                $bg = ['teh', 'kopi', 'donat', 'boba'];
+                                $i = rand(0, count($bg) - 1);
+                                $selected_bg = "$bg[$i]";
+                            @endphp
+                            <tr>
+                                <td><img class="harga" src={{ asset('style/assets/'.$selected_bg.'.png') }}  ></td>
+                                <td>{{ $item->name }}</td>
+                                <td width="100%"><div class="form-group">
+                                    <input type="hargakopi" class="form-control" name="price{{ $item->id }}" id="exampleInputHarga1" aria-describedby="unameHelp" placeholder="contoh : 10000" value="{{ $item->price }}"/>
+                                </div></td>
+                                <td>
+                                    <form action="/item/{{ $item->id }}/delete" method="POST" id="form2">
+                                        @csrf
+                                        <input type="hidden" name="_method" value="DELETE" form="form2">
+                                        <input type="submit" value="Delete" form="form2">
+                                    </form>
+                                </td>
+                            </tr>
+                            
+                        @endforeach
+{{--                         
                         <tr>
                             <td><img class="harga" src={{ asset('style/assets/kopi.png') }}  ></td>
                             <td>Kopi</td>
@@ -176,9 +202,9 @@
                             <td><div class="form-group">
                                 <input type="hargateh" class="form-control" id="exampleInputHarga4" aria-describedby="unameHelp" placeholder="contoh : 10000"/>
                             </div></td>
-                        </tr>
+                        </tr> --}}
                     </table>
-                    <button type="submit" class="">Simpan</button>
+                    <input type="submit" class="" value="Simpan" form="form1">
                 </form>
             </div>
 

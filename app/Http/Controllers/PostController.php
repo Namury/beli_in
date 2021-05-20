@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Exception;
 
@@ -23,10 +24,10 @@ class PostController extends Controller
     {
         $creator = User::where('id', Auth::user()->id)->first();
         $posts = Post::where('user_id', $creator->id)->with('category')->get();
-        foreach($posts as $post){
-            if(strpos($post->content, '. '))
-                $post->content = substr($post->content, 0, strpos($post->content, '. ', strpos($post->content, '. ')+1)+1);
-        }
+        // foreach($posts as $post){
+        //     if(strpos($post->content, '. '))
+        //         $post->content = substr($post->content, 0, strpos($post->content, '. ', strpos($post->content, '. ')+1)+1);
+        // }
         
         $categories = PostCategory::where('user_id', Auth::user()->id)->get();
         
@@ -57,6 +58,7 @@ class PostController extends Controller
             $post->post_category_id = $request->category;
             
             if($request->has('image')) {
+                $image = $request->file('image');
                 $post->image = $image->store('post', 'public');
             }
             
@@ -65,6 +67,9 @@ class PostController extends Controller
             DB::commit();
         } catch(Exception $e){
             DB::rollBack();
+            if (isset($image)) {
+                Storage::delete('public/'.$image);
+            }
 			$output = $e->getMessage();
 			return redirect('/post')->withErrors(['msg', $output]);
         }
@@ -107,9 +112,14 @@ class PostController extends Controller
     public function delete(Request $request)
     {
         if($request->post_id != null){
-            Post::where('id',$request->post_id)->delete();
+            $post = Post::where('id',$request->post_id)->first();
+
+            Storage::delete('public/'.$post->image);
+            $post->delete();
+
             return redirect('/post');
         }
+
         return redirect('/post')->withErrors(['msg', 'Something went wrong']);
     }
 
@@ -134,10 +144,10 @@ class PostController extends Controller
         } catch(Exception $e){
             DB::rollBack();
 			$output = $e->getMessage();
-			return redirect('/post/create')->withErrors(['msg', $output]);
+			return redirect('/post')->withErrors(['msg', $output]);
         }
 
-        return redirect('/post/create');
+        return redirect('/post');
     }
 
 }

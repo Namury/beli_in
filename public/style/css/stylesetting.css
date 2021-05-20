@@ -195,6 +195,27 @@ form button {
     margin-bottom: 10px;
 }
 
+form input[type='submit']{
+    padding: 3px 40px;
+    border-radius: 50px;
+    border: 1px solid #4BD0AF;
+    background-color: #4BD0AF;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.buttonnew{
+    width: fit-content;
+    padding: 3px 40px;
+    border-radius: 50px;
+    border: 1px solid #4BD0AF;
+    background-color: #4BD0AF;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
 .buttonpay{
     background-color:#FFFFFF;
     border:1px solid #4BD0AF;

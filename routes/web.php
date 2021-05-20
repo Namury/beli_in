@@ -52,6 +52,7 @@ Route::get('/item/create', 'SettingController@createItem');
 Route::get('/item/{id}/edit', 'SettingController@editItem');
 Route::post('/item/create', 'SettingController@createItemAction');
 Route::patch('/item/{id}/edit', 'SettingController@editItemAction');
+Route::patch('/item/edit', 'SettingController@editAllItemAction');
 Route::delete('item/{id}/delete', 'SettingController@deleteItem');
 
 //explore

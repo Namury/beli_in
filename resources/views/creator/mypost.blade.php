@@ -145,7 +145,7 @@
                             <div class="action-create-kiri">
                                 <div class="custom-gambar">
                                 <label for="fileupload"></label>
-                                <input type="file" id="fileupload" name="file">
+                                <input type="file" id="fileupload" name="image">
                             </div>
                             <div class="upload-images">
                                 <img src="upload.png" id="upload-img">
@@ -191,12 +191,17 @@
                             </div>
                             <div class="media">
                                 @if ($post->image != null)
-                                    <img width="70%" src={{ $post->image }} alt="">
+                                    <img width="70%" src='storage/{{ $post->image }}' alt="">
                                 @else
-                                    <img width="70%" src={{ asset('style/assets/image-post.PNG') }} alt="">
+                                    <img width="70%" src={{ asset('style/assets/image-post.png') }} alt="">
                                 @endif
-                                
                             </div>
+                            <form action="/post/{{ $post->id }}/delete" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name='post_id' value="{{ $post->id }}">
+                                <button class="create-button">Delete</button>
+                            </form>
                         </div>
                     </div>
                     <hr class="divider">

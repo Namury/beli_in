@@ -35,7 +35,7 @@ class SupportController extends Controller
     
     public function getSupporter()
     {
-        $supporters = Support::with('supporterDetail', 'item')->where('supported', Auth::user()->id)->get();
+        $supporters = Support::with('supporterDetail', 'item')->where('supported', Auth::user()->id)->latest()->get();
         $total = 0;
         foreach($supporters as $supporter){
             $total =+ $total + $supporter->total_price;

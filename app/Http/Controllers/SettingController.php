@@ -76,6 +76,36 @@ class SettingController extends Controller
         return redirect('/setting');
     }
 
+    public function editAllItemAction(Request $request)
+    {
+        // dd($request->all());
+        foreach($request->all() as $key=>$price){
+            if($key != "_token" && $key != "_method"){
+                $arr = explode('price', $key);
+                $items[(int)$arr[1]] = $price;
+            }
+        }
+        
+        foreach($items as $item_id=>$price)
+        {
+            try {
+                DB::beginTransaction();
+            
+                $item = Item::where('id', $item_id)->first();
+                $item->price = $price;
+                $item->save();
+
+                DB::commit();
+            } catch (Exception $e) {
+                DB::rollback();
+                $output = $e->getMessage();
+                return redirect('/setting')->withErrors(['msg', $output]);
+            }
+        }
+
+        return redirect('/setting');
+    }
+
     public function deleteItem($id)
     {
         Item::where('id', $id)->delete();
