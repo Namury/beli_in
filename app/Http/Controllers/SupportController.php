@@ -22,14 +22,14 @@ class SupportController extends Controller
 
     public function index($slug)
     {
-        $creator = User::where('page_slug', $slug)->first();
+        $creator = User::with('items')->where('page_slug', $slug)->first();
         $posts = Post::where('user_id', $creator->id)->with('category')->get();
         $supporters = Support::with('supporterDetail', 'item')->where('supported', $creator->id)->get();
         
-        // foreach($posts as $post){
-        //     if(strpos($post->content, '. '))
-        //         $post->content = substr($post->content, 0, strpos($post->content, '. ', strpos($post->content, '. ')+1)+1);
-        // }
+        foreach($posts as $post){
+            if(strpos($post->content, '. '))
+                $post->content = substr($post->content, 0, strpos($post->content, '. ', strpos($post->content, '. ')+1)+1);
+        }
         return view('creator.supportcreator', ['creator' => $creator, 'posts' => $posts, 'supporters' => $supporters]);
     }
     
@@ -106,7 +106,7 @@ class SupportController extends Controller
             $paymentUrl = \Midtrans\Snap::createTransaction($params)->redirect_url;
             // Redirect to Snap Payment Page
             header('Location: ' . $paymentUrl);
-            return redirect($paymentUrl);
+            return redirect()->away($paymentUrl);
         }
         catch (Exception $e) {
             echo $e->getMessage();

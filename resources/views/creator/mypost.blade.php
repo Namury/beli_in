@@ -153,9 +153,9 @@
                             </div>
 
                             <div class="action-create-kanan">
-                                <div class="create-button">
-                                    <input type="submit">
-                                </div>
+                                {{-- <div class="create-button"> --}}
+                                    <input class="create-button" type="submit">
+                                {{-- </div> --}}
                                 <div class="create-private">
                                 </div>
                             </div>
@@ -174,9 +174,10 @@
                 <div class="mypost">
 					My Post
 				</div>
-                <hr class="divider">
+                
 
                 @foreach ($posts as $post)
+                    <hr class="divider">
                     <div class="mypost-post">
                         <div class="mypost-content">
                             <div class="mypost-title">
@@ -200,7 +201,7 @@
                     </div>
                     <hr class="divider">
                     @endforeach
-				<div class="mypost-post">
+				{{-- <div class="mypost-post">
 						<div class="mypost-content">
 							<div class="mypost-title">
 							HY 
@@ -216,7 +217,7 @@
 							</div>
 						</div>
                 </div>
-              
+               --}}
             </div>
 
             

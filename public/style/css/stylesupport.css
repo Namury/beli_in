@@ -124,7 +124,6 @@ body {
     gap: 30px;
     align-items: center;
 	 display: flex;
-	background-color:Red;
 }
 .mainright{
 	width:40%;
@@ -290,10 +289,10 @@ float:left;
   background-size:95%;
 }
 
-.itemdonasi:hover{
+/* .itemdonasi:hover{
  border:2px solid #FF686B;
  cursor:pointer;
-}
+} */
 
 .buttonplace{
 	float:right;
@@ -633,7 +632,7 @@ max-height:1000px;
     }
 }
 
-input[type=text], select, textarea {
+input[type=text], input[type=number], select, textarea {
   max-width: 250px;
   min-width: 200px;
   padding: 5px;
@@ -670,7 +669,7 @@ max-width:100px;
 }
 
 label {
-  padding: 0px 12px 12px 0;
+  /* padding: 0px 12px 12px 0; */
   display: inline-block;
   font-weight:600;
   font-size:20px;
@@ -1009,11 +1008,11 @@ float:left;
   background-color:#ccc;
   background-size:95%;
 }
-
+/* 
 .itemdonasi:hover{
  border:2px solid #FF686B;
  cursor:pointer;
-}
+} */
 
 .buttonplace{
 	float:left;
