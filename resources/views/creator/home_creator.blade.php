@@ -18,7 +18,7 @@
     <nav class="navbar fixed-top justify-content-between">
         <div class="logo">
             <img src="{{ asset('style/assets/logo.svg') }}" width="40" height="" class="d-inline-block align-top" alt="">
-            <a class="brand" href="#">
+            <a class="brand" href="/">
              Beli.in
         </a>
         </div>
@@ -130,7 +130,7 @@
                                 <a href="">@ {{ $post->user->page_slug}}</a>
                             </div>
                             <div class="post-text">
-                                <p>Celengan rindu - Fiersa Besari (Feby Cover) Selamat menikmati:) Mohon support nya ya!</p>
+                                <p>{!! $post->content !!}</p>
                             </div>
                             <div class="media">
                                 <img width="80%" src={{ asset('style/assets/image-post.PNG') }} alt="">

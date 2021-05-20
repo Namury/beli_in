@@ -19,13 +19,13 @@ h4{
 	font-weight:550;
 }
 
-a {
+/* a {
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
   cursor: pointer;
   color: #63bdd9;
-  
+   */
 }
 
 h2 {
@@ -797,7 +797,7 @@ input[type=number] {
 	height: 200px;
 	width: 200px;
 }
-}
+
 
 @media (max-width: 789px) and (min-width: 0px) {
 	
@@ -818,14 +818,14 @@ h4{
 	font-weight:550;
 }
 
-a {
+/* a {
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
   cursor: pointer;
   color: #63bdd9;
   
-}
+} */
 
 h2 {
   text-align: center;

@@ -150,28 +150,28 @@
                     <h4>Harga</h4>
                     <table class="tableharga">
                         <tr>
-                            <td><img class="harga" src={{ asset('style/assets/kopi.PNG') }}  ></td>
+                            <td><img class="harga" src={{ asset('style/assets/kopi.png') }}  ></td>
                             <td>Kopi</td>
                             <td width="100%"><div class="form-group">
                                 <input type="hargakopi" class="form-control" id="exampleInputHarga1" aria-describedby="unameHelp" placeholder="contoh : 10000"/>
                             </div></td>
                         </tr>
                         <tr>
-                            <td><img class="harga" src={{ asset('style/assets/boba.PNG') }} ></td>
+                            <td><img class="harga" src={{ asset('style/assets/boba.png') }} ></td>
                             <td>Boba</td>
                             <td><div class="form-group">
                                 <input type="hargaboba" class="form-control" id="exampleInputHarga2" aria-describedby="unameHelp" placeholder="contoh : 10000"/>
                             </div></td>
                         </tr>
                         <tr>
-                            <td><img class="harga" src={{ asset('style/assets/donat.PNG') }} ></td>
+                            <td><img class="harga" src={{ asset('style/assets/donat.png') }} ></td>
                             <td>Donat</td>
                             <td><div class="form-group">
                                 <input type="hargadonat" class="form-control" id="exampleInputHarga3" aria-describedby="unameHelp" placeholder="contoh : 10000"/>
                             </div></td>
                         </tr>
                         <tr>
-                            <td><img class="harga" src={{ asset('style/assets/teh.PNG') }} ></td>
+                            <td><img class="harga" src={{ asset('style/assets/teh.png') }} ></td>
                             <td>Teh Manis</td>
                             <td><div class="form-group">
                                 <input type="hargateh" class="form-control" id="exampleInputHarga4" aria-describedby="unameHelp" placeholder="contoh : 10000"/>

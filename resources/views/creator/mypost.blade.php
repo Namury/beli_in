@@ -12,7 +12,7 @@
 	 <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;400&family=Salsa&display=swap" rel="stylesheet">
     <script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
-    <title>Hello, world!</title>
+    <title>My Post</title>
 </head>
 
 <body>

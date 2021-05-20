@@ -220,7 +220,7 @@ form button {
     
 .ovo:before{
     content: '';
-    background:url("assets/OVO.png");
+    background:url("assets/OVO.PNG");
     background-repeat: no-repeat;
     background-size:cover;
     position:absolute;
@@ -240,7 +240,7 @@ form button {
 }
 .gopay:before{
     content: '';
-    background:url("assets/GOPAY.png");
+    background:url("assets/GOPAY.PNG");
     background-repeat: no-repeat;
     background-size:cover;
     position:absolute;
@@ -261,7 +261,7 @@ form button {
 
 .dana:before{
     content: '';
-    background:url("assets/DANA.png");
+    background:url("assets/DANA.PNG");
     background-repeat: no-repeat;
     background-size:cover;
     position:absolute;

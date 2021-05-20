@@ -13,14 +13,14 @@
     <title>Beli.in</title>
     <div class="atas">
 
-        <div class="judul1" onclick="openCity(event, 'beranda')" id="defaultOpen">
+        <a href="/"><div class="judul1" onclick="openCity(event, 'beranda')" id="defaultOpen">
             <img class="namaatas" src="{{ asset('style/assets/LogoIcon.png') }}">
-        </div>
-        <div class="tombolatas masuk"> <a href="/register">Daftar</a></div>
-        <div class="tombolatas login"> <a href="/login">Masuk</a></div>
+        </div></a>
+        <a href="/register"><div class="tombolatas masuk"> Daftar </div></a>
+        <a href="/login"><div class="tombolatas login"> Masuk </div></a>
 
     </div>
-
+    <button href></button>
     <div class="panel latarmap" id="beranda">
         <div id="pagescroll">
             <div class="section pertama">
@@ -32,9 +32,9 @@
                     Cara mudah dan gratis mendapatkan donasi<br>
                     langsung dari penggemarmu !
                 </div>
-                <div class="mulai" onclick="openCity(event, 'register')">
+                <a href="/register"><div class="mulai">
                     Mulai
-                </div>
+                </div></a>
                 <!--
    <div class="tablatarbawah">
     <div class="roundpanel"> 

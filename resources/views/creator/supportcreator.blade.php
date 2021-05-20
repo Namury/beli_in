@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="{{ asset('style/css/stylesupport.css') }}" >
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;400&family=Salsa&display=swap" rel="stylesheet">
-    <title>Hello, world!</title>
+    <title>{{ $creator->name }}</title>
 </head>
 
 <body>
