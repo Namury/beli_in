@@ -18,14 +18,22 @@
     <nav class="navbar fixed-top justify-content-between">
         <div class="logo">
             <img src="{{ asset('style/assets/logo.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
-            <a class="brand" href="#">
+            <a class="brand" href="">
              Beli.in
         </a>
         </div>
-        <div>
+        <div class="profile-side">
+            <div>
             <a class="profile" href="#">
                 <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
             </a>
+            </div>
+            <div class="sidebar-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -179,6 +187,7 @@
     </div>
 
 
+    <script src="{{ asset('style/js/sidebar.js') }}"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

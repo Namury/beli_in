@@ -55,6 +55,7 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     overflow-x: hidden;
     padding-top: 30px;
+    transition: all 0.5s;
 }
 
 .sidebar ul {
@@ -371,6 +372,7 @@ hr {
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
+    flex-shrink: 0
 }
 
 .profil-images img {
@@ -518,6 +520,115 @@ form button {
 .suporters .suporter-list .profil-images {
     width: 50px;
     height: 50px;
+    flex-shrink: 0
+}
+
+
+/* Hamburger Menu */
+
+.sidebar-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 999;
+}
+
+.sidebar-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.sidebar-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+
+/* Hamburger Menu Animation */
+
+.sidebar-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.sidebar-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.sidebar-toggle input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+    background-color: #FF686B;
+}
+
+.sidebar-toggle input:checked~span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+    background-color: #FF686B;
+}
+
+.sidebar-toggle input:checked~span:nth-child(3) {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.profile-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main {
+        margin-left: 200px;
+        padding: 30px 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .navbar {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .sidebar-toggle {
+        display: flex;
+        flex-direction: column;
+        height: 20px;
+        justify-content: space-between;
+        position: relative;
+        z-index: 999999;
+    }
+    .sidebar {
+        z-index: 9999;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    .sidebar ul {
+        gap: 30px;
+    }
+    .slide {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .main {
+        margin-left: 0px;
+        padding: 30px 10px;
+    }
 }
 
 
