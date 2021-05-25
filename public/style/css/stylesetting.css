@@ -39,17 +39,17 @@ body {
 
 /* Sidebar */
 
-.sidebarhp{
-    display:none;
-    }
+.sidebarhp {
+    display: none;
+}
 
 .wrapper {
     margin-top: 55px;
 }
 
-.sidebaricon{
-	color:black;
-	display:block;
+.sidebaricon {
+    color: black;
+    display: block;
 }
 
 .sidebar {
@@ -125,6 +125,7 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+
 /* Page Setting */
 
 .page-setting {
@@ -195,7 +196,7 @@ form button {
     margin-bottom: 10px;
 }
 
-form input[type='submit']{
+form input[type='submit'] {
     padding: 3px 40px;
     border-radius: 50px;
     border: 1px solid #4BD0AF;
@@ -204,7 +205,7 @@ form input[type='submit']{
     margin-bottom: 10px;
 }
 
-.buttonnew{
+.buttonnew {
     width: fit-content;
     padding: 3px 40px;
     border-radius: 50px;
@@ -216,82 +217,84 @@ form input[type='submit']{
     margin-left: 20px;
 }
 
-.buttonpay{
-    background-color:#FFFFFF;
-    border:1px solid #4BD0AF;
+.buttonpay {
+    background-color: #FFFFFF;
+    border: 1px solid #4BD0AF;
     text-decoration: none;
     display: inline-block;
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 20px 20px 20px 20px;
     margin: 5px 5px 5px 5px;
-    width:100%;
-    height:38px;
-    margin-bottom:5;	
-    padding:5px 0 5px 0;
-    cursor:pointer;
-  }
-
-.ovo{
-    display:inblock;
-    height:20px;
-    background:white;
-    color:white;
-    text-decoration:none;
-    }
-    
-.ovo:before{
-    content: '';
-    background:url("assets/OVO.PNG");
-    background-repeat: no-repeat;
-    background-size:cover;
-    position:absolute;
-    background-size:100%;
-    background-position:top center;
-    margin-left: 400px;
-    width:80px;
-    height:50px;
-}
-    
-.gopay{
-    display:inblock;
-    height:20px;
-    background:white;
-    color:white;
-    text-decoration:none;
-}
-.gopay:before{
-    content: '';
-    background:url("assets/GOPAY.PNG");
-    background-repeat: no-repeat;
-    background-size:cover;
-    position:absolute;
-    background-size:100%;
-    background-position:top center;
-    margin-left: 400px;
-    width:80px;
-    height:50px;
-}
-    
-.dana{
-    display:inblock;
-    height:20px;
-    background:white;
-    color:white;
-    text-decoration:none;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 5;
+    padding: 5px 0 5px 0;
+    cursor: pointer;
 }
 
-.dana:before{
-    content: '';
-    background:url("assets/DANA.PNG");
-    background-repeat: no-repeat;
-    background-size:cover;
-    position:absolute;
-    background-size:100%;
-    background-position:top center;
-    margin-left: 400px;
-    width:80px;
-    height:50px;
+.ovo {
+    display: inblock;
+    height: 20px;
+    background: white;
+    color: white;
+    text-decoration: none;
 }
+
+.ovo:before {
+    content: '';
+    background: url("assets/OVO.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-size: 100%;
+    background-position: top center;
+    margin-left: 400px;
+    width: 80px;
+    height: 50px;
+}
+
+.gopay {
+    display: inblock;
+    height: 20px;
+    background: white;
+    color: white;
+    text-decoration: none;
+}
+
+.gopay:before {
+    content: '';
+    background: url("assets/GOPAY.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-size: 100%;
+    background-position: top center;
+    margin-left: 400px;
+    width: 80px;
+    height: 50px;
+}
+
+.dana {
+    display: inblock;
+    height: 20px;
+    background: white;
+    color: white;
+    text-decoration: none;
+}
+
+.dana:before {
+    content: '';
+    background: url("assets/DANA.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-size: 100%;
+    background-position: top center;
+    margin-left: 400px;
+    width: 80px;
+    height: 50px;
+}
+
 
 /*Tabel Harga*/
 
@@ -299,14 +302,16 @@ form input[type='submit']{
     color: #000000;
     margin-bottom: 10px;
 }
- 
-.tableharga, th, td {
+
+.tableharga,
+th,
+td {
     padding: 8px 20px;
 }
 
-.harga{
-	height: 50px;
-	width: 50px;
+.harga {
+    height: 50px;
+    width: 50px;
 }
 
 @media screen and (max-height: 450px) {

@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('style/css/stylecreator.css') }}" />
+    <link rel="stylesheet" href="{{ asset('style/css/styles.css') }}" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;400&family=Salsa&display=swap" rel="stylesheet">
     <title>Homepage</title>
@@ -22,16 +22,21 @@
              Beli.in
         </a>
         </div>
-        <a class="profile" href="#">
-            <img src="{{ asset('style/assets/profile.svg') }}" width="40" height="" class="d-inline-block align-top" alt="">
-        </a>
+        <div class="profile-side">
+            <div>
+            <a class="profile" href="#">
+                <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
+            </a>
+            </div>
+            <div class="sidebar-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
-	<div class="sidebarhp" onclick="openNav()">
-	-
-	</div>
-	<div class="sidebarpc" id="sidebarpc" onclick="closeNav()">
-	-
-	</div>
+
     <div class="wrapper">
         <nav class="sidebar" id="sidebar">
 
@@ -157,7 +162,7 @@
     </div>
     </div>
 
-
+    <script src="{{ asset('style/js/sidebar.js') }}"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -165,53 +170,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
-<script>
-function openNav() {
-  document.getElementById("sidebar").style.width = "260px";
-  document.getElementById("sidebarpc").style.width = "47%";
-  document.getElementById("sidebara").style.padding = "5px 5px 5px 30px";
-  document.getElementById("sidebara1").style.padding = "5px 5px 5px 30px";
-  document.getElementById("sidebara2").style.padding = "5px 5px 5px 30px";
-  document.getElementById("sidebara3").style.padding = "5px 5px 5px 30px";
-  document.getElementById("sidebara4").style.padding = "5px 5px 5px 30px";
-  document.getElementById("sidebara5").style.padding = "5px 5px 5px 30px";
-  document.getElementById("sidebartext").style.display = "block";
-  document.getElementById("sidebartext1").style.display = "block";
-  document.getElementById("sidebartext2").style.display = "block";
-  document.getElementById("sidebartext3").style.display = "block";
-  document.getElementById("sidebartext4").style.display = "block";
-  document.getElementById("sidebartext5").style.display = "block";
-  document.getElementById("sidebartext").style.color = "black";
-  document.getElementById("sidebartext1").style.color = "black";
-  document.getElementById("sidebartext2").style.color = "black";
-  document.getElementById("sidebartext3").style.color = "black";
-  document.getElementById("sidebartext4").style.color = "black";
-  document.getElementById("sidebartext5").style.color = "black";
-  
- 
-}
-
-function closeNav() {
-  document.getElementById("sidebar").style.width = "60px";
-  document.getElementById("sidebarpc").style.width = "0px";
-    document.getElementById("sidebara").style.padding = "5px 5px 5px 75px";
-  document.getElementById("sidebara1").style.padding = "5px 5px 5px 75px";
-  document.getElementById("sidebara2").style.padding = "5px 5px 5px 75px";
-  document.getElementById("sidebara3").style.padding = "5px 5px 5px 75px";
-  document.getElementById("sidebara4").style.padding = "5px 5px 5px 75px";
-  document.getElementById("sidebara5").style.padding = "5px 5px 5px 75px";
-  document.getElementById("sidebartext").style.display = "none";
-  document.getElementById("sidebartext1").style.display = "none";
-  document.getElementById("sidebartext2").style.display = "none";
-  document.getElementById("sidebartext3").style.display = "none";
-  document.getElementById("sidebartext4").style.display = "none";
-  document.getElementById("sidebartext5").style.display = "none";
-  document.getElementById("sidebartext").style.color = "white";
-  document.getElementById("sidebartext1").style.color = "white";
-  document.getElementById("sidebartext2").style.color = "white";
-  document.getElementById("sidebartext3").style.color = "white";
-  document.getElementById("sidebartext4").style.color = "white";
-  document.getElementById("sidebartext5").style.color = "white";
-}
-</script>
 </html>
