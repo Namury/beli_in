@@ -18,13 +18,13 @@
     <nav class="navbar fixed-top justify-content-between">
         <div class="logo">
             <img src="{{ asset('style/assets/logo.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
-            <a class="brand" href="#">
+            <a class="brand" href="/">
              Beli.in
         </a>
         </div>
         <div class="profile-side">
             <div>
-            <a class="profile" href="#">
+            <a class="profile" href="/my-account">
                 <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
             </a>
             </div>

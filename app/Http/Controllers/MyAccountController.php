@@ -37,7 +37,21 @@ class MyAccountController extends Controller
         $follower = Follow::where('followed', $user->id)->with('followed')->get();
         $following = Follow::where('follower', $user->id)->with('follower')->get();
 
-        return view ('creator.my_account', ['user' => $user, 'user_types' => $user_types, 'follower' => $follower, 'following' => $following]);
+        return view ('creator.profile_creator', ['user' => $user, 'user_types' => $user_types, 'follower' => $follower, 'following' => $following]);
+    }
+
+    public function creatorFollowing()
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        $following = Follow::where('follower', $user->id)->with('follower')->get();
+        return view ('creator.following_creator', ['user' => $user, 'following' => $following]);
+    }
+
+    public function creatorFollower()
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        $follower = Follow::where('followed', $user->id)->with('followed')->get();
+        return view ('creator.followers_creator', ['user' => $user, 'follower' => $follower]);
     }
 
     public function supporter()
@@ -46,5 +60,10 @@ class MyAccountController extends Controller
         $following = Follow::where('follower', $user->id)->with('follower')->get();
 
         return view ('creator.my_account', ['user' => $user, 'following' => $following]);
+    }
+
+    public function supporterFollowing()
+    {
+
     }
 }

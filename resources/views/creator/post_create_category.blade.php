@@ -22,11 +22,11 @@
         <div class="logo">
             <img src="{{ asset('style/assets/logo.svg') }}" width="40" height="" class="d-inline-block align-top"
                 alt="">
-            <a class="brand" href="#">
+            <a class="brand" href="/">
                 Beli.in
             </a>
         </div>
-        <a class="profile" href="#">
+        <a class="profile" href="/my-account">
             <img src="{{ asset('style/assets/profile.svg') }}" width="40" height="" class="d-inline-block align-top"
                 alt="">
         </a>
