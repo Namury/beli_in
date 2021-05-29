@@ -39,6 +39,40 @@ class MyAccountController extends Controller
         }
     }
 
+    public function editProfileCreatorAction(Request $request)
+    {
+        try{
+            DB::beginTransaction();
+            
+            $user = User::where('id', Auth::user()->id)->first();
+            $user->name = $request->name;
+            $user->description = $request->description;
+            $user->user_type_id = $request->user_type_id;
+            $user->page_name = $request->page_name;
+            $user->page_slug = $this->nameToSlug($request->page_name);
+
+            if($request->has('image')) {
+                $image = $request->file('image');
+                $user->profile_picture = $image->store('profile', 'public');
+            }
+
+            $user->save();
+
+            DB::commit();
+        } catch(Exception $e){
+            DB::rollBack();
+			$output = $e->getMessage();
+            dd($output);
+			return redirect('/my-account')->withErrors(['msg', $output]);
+        }
+        return redirect('/my-account');
+    }
+
+    public function editProfileSupporterAction()
+    {
+
+    }
+
     public function creator()
     {
         $user = User::where('id', Auth::user()->id)->first();
@@ -76,5 +110,15 @@ class MyAccountController extends Controller
     public function supporterFollowing()
     {
 
+    }
+
+    private function nameToSlug($string){
+        $string = str_replace(array('[\', \']'), '', $string);
+        $string = preg_replace('/\[.*\]/U', '', $string);
+        $string = preg_replace('/&(amp;)?#?[a-z0-9]+;/i', '-', $string);
+        $string = htmlentities($string, ENT_COMPAT, 'utf-8');
+        $string = preg_replace('/&([a-z])(acute|uml|circ|grave|ring|cedil|slash|tilde|caron|lig|quot|rsquo);/i', '\\1', $string );
+        $string = preg_replace(array('/[^a-z0-9]/i', '/[-]+/') , '-', $string);
+        return strtolower(trim($string, '-'));
     }
 }

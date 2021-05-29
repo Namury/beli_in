@@ -34,6 +34,9 @@ Route::post('/register/creator', 'AuthController@registerCreatorAction');
 Route::post('/register/supporter', 'AuthController@registerSupporterAction');
 Route::post('/follow/{id}', 'FollowController@index');
 
+Route::patch('/my-account/edit/creator', 'MyAccountController@editProfileCreatorAction');
+Route::patch('/my-account/edit/supporter', 'MyAccountController@editProfileSupporterAction');
+
 //creator from supporter
 Route::get('{slug}/support', 'SupportController@index');
 Route::get('{slug}/order', 'SupportController@order');

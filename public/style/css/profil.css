@@ -374,6 +374,20 @@ hr {
     color: white;
     border-radius: 50px;
 }
+form textarea{
+    border: 1px solid #84DCC6;
+    width:100%;
+    height:50px;
+    padding: 12px 20px 200px;
+    resize: none;
+    overflow: hidden
+    
+   }
+    
+form textarea:focus {
+    background-color:rgba(165, 255, 214, 0.2);
+    outline:none;
+  } 
 
 form button {
     padding: 3px 40px;

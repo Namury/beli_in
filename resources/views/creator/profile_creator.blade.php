@@ -24,7 +24,13 @@
         </div>
         <div>
             <a class="profile" href="/my-account">
-                <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
+                @if ($user->profile_picture != null)
+                    <img src='storage/{{ $user->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
+                    
+                @else
+                    <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
+                    
+                @endif
             </a>
         </div>
     </nav>
@@ -120,44 +126,51 @@
 
                 <hr>
 
-                <form>
-
+                <form method="POST" enctype="multipart/form-data" action="/my-account/edit/creator">
+                    @csrf
+                    @method('PATCH')
                     <div class="form-group profile-image ">
                         <div class="profile-images">
-                            <img src="{{ asset('style/assets/profile.svg') }}" id="upload-img">
+                            @if ($user->profile_picture != null)
+                                <img src='storage/{{ $user->profile_picture }}' id="upload-img">
+                                
+                            @else 
+                                <img src="{{ asset('style/assets/profile.svg') }}" id="upload-img">
+                            @endif
                         </div>
                         <div class="custom-file">
                             <label for="fileupload">Unggah Foto</label>
-                            <input type="file" id="fileupload">
+                            <input type="file" id="fileupload" name="image">
                         </div>
                     </div>
+
+                    <h3>Nama</h3>
                     <div class="form-group">
-                        <input type="username" class="form-control" id="exampleInputUsername1" aria-describedby="unameHelp" placeholder="Masukkan Username">
+                        <input name="name" type="text" class="form-control" id="exampleInputUsername1" aria-describedby="unameHelp" placeholder="Masukkan Username" value="{{ $user->name }}" required>
                     </div>
+                    
+                    <h3>Username</h3>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan email">
+                        <input name="page_name" type="text" class="form-control" id="exampleInputUsername1" aria-describedby="unameHelp" placeholder="Masukkan Username" value="{{ $user->page_name }}" required>
                     </div>
+                    
+                    <h3>Description</h3>
+                    <div class="form-group">
+                        <textarea name="description" cols="30" rows="5" required>{{ $user->description }}</textarea><br>
+                    </div>
+
                     <h3>Keahlian</h3>
                     <div class="form-group">
                         <select class="form-control">
-                            <option selected>Pilih Keahlian</option>
-                            <option value="Penyanyi">Penyanyi</option>
-                            <option value="Youtuber">Youtuber</option>
-                            <option value="Streamer">Streamer</option>
-                            <option value="Pelukis">Pelukis</option>
-                            <option value="Fotografer">Penari</option>
-                            <option value="Penari">Penari</option>
-                            <option value="Gitaris">Gitaris</option>
-                            <option value="Editor">Editor</option>
-                            <option value="Penulis">Penulis</option>
-                          </select>
-                    </div>
-                    <h3>Password</h3>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password Baru">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Konfirmasi Password">
+                            @foreach ($user_types as $user_type)
+                                @if ($user->user_type_id == $user_type->id )
+                                    <option value="{{ $user_type->id }}" selected>{{ $user_type->name }}</option>
+                                    
+                                @else
+                                    <option value="{{ $user_type->id }}">{{ $user_type->name }}</option>
+                                @endif
+                            @endforeach
+                        </select>
                     </div>
                     <button type="submit" class="">Simpan</button>
                 </form>
