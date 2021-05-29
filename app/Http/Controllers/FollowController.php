@@ -29,10 +29,10 @@ class FollowController extends Controller
             try{
                 DB::beginTransaction();
                 
-                $user = new Follow;
-                $user->follower = Auth::user()->id;
-                $user->followed = $id;
-                $user->save();
+                $follow = new Follow;
+                $follow->follower = Auth::user()->id;
+                $follow->followed = $id;
+                $follow->save();
     
                 DB::commit();
             } catch(Exception $e){
@@ -53,24 +53,16 @@ class FollowController extends Controller
         }
 
         $follow = Follow::where([['follower', Auth::user()->id], ['followed', $id]])->first();
-        if($follow == null){
+        if($follow != null){
             try{
-                DB::beginTransaction();
-                
-                $user = new Follow;
-                $user->follower = Auth::user()->id;
-                $user->followed = $id;
-                $user->save();
-    
-                DB::commit();
+                $follow->delete();
             } catch(Exception $e){
-                DB::rollBack();
                 $output = $e->getMessage();
-                return redirect(User::where('id', $id)->first()->page_slug.'/support/')->withErrors(['msg', $output]);
+                return redirect('/my-account/following')->withErrors(['msg', $output]);
             }
-            return redirect(User::where('id', $id)->first()->page_slug.'/support/');
+            return redirect('/my-account/following');
         } else{
-            return redirect(User::where('id', $id)->first()->page_slug.'/support/')->withErrors(['msg', 'You Already Followed']);
+            return redirect('/my-account/following')->withErrors(['msg', 'You Already Followed']);
         }
     }
 }

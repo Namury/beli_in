@@ -124,8 +124,13 @@
                     @foreach ($follower as $item)
                         <div class="followers">
                             <div class="user-info">
-                                <a href="" class="avatar"><img src="{{ asset('style/assets/profile.svg') }}" alt=""></a>
-                                <a href="" class="username">{{ $item->followed->name }}</a>
+                                @if ($item->followerDetail->page_slug != null)
+                                    <a href="/{{ $item->followerDetail->page_slug }}/support" class="avatar"><img src="{{ asset('style/assets/profile.svg') }}" alt=""></a>
+                                    <a href="/{{ $item->followerDetail->page_slug }}/support" class="username">{{ $item->followerDetail->name }}</a>   
+                                @else
+                                    <a class="avatar"><img src="{{ asset('style/assets/profile.svg') }}" alt=""></a>
+                                    <a class="username">{{ $item->followerDetail->name }}</a>                   
+                                @endif
                             </div>
                         </div> 
                     @endforeach

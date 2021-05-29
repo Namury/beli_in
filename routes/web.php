@@ -24,9 +24,10 @@ Route::get('/register', 'AuthController@registerOption');
 Route::get('/register/creator', 'AuthController@registerCreator');
 Route::get('/register/supporter', 'AuthController@registerSupporter');
 Route::get('/my-account', 'MyAccountController@index');
-Route::get('/my-account/following', 'MyAccountController@creatorFollowing');
+Route::get('/my-account/following', 'MyAccountController@following');
 Route::get('/my-account/follower', 'MyAccountController@creatorFollower');
 Route::get('/logout', 'AuthController@logout');
+Route::get('/unfollow/{id}', 'FollowController@unfollow');
 
 Route::post('/login', 'AuthController@loginAction');
 Route::post('/register/creator', 'AuthController@registerCreatorAction');
