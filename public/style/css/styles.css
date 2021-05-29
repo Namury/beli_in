@@ -556,6 +556,195 @@ form button {
 }
 
 
+/* Page Setting */
+
+.page-setting {
+    width: 100%;
+}
+
+.page-setting h1,
+.page-setting h3 {
+    font-weight: 500;
+}
+
+.page-setting input {
+    border: 1px solid #84DCC6;
+    border-radius: 50px;
+}
+
+.page-setting select {
+    border: 1px solid #84DCC6;
+    border-radius: 50px;
+}
+
+.page-setting-header {
+    padding: 40px 40px 10px;
+}
+
+.page-setting form {
+    padding: 10px 40px 10px;
+}
+
+.page-setting ul li {
+    list-style: none;
+}
+
+.page-setting ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.page-setting a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.page-setting ul li a {
+    display: block;
+    border: 1px solid #84DCC6;
+    color: #000000;
+    border-radius: 50px;
+    padding: 5px 20px;
+    /* width: 120px;
+    height: 35px; */
+}
+
+hr {
+    border-top: 1px solid #84DCC6;
+    background-color: #84DCC6;
+    margin: 0;
+}
+
+form button {
+    padding: 3px 40px;
+    border-radius: 50px;
+    border: 1px solid #4BD0AF;
+    background-color: #4BD0AF;
+    color: white;
+    margin-bottom: 10px;
+}
+
+form input[type='submit'] {
+    padding: 3px 40px;
+    border-radius: 50px;
+    border: 1px solid #4BD0AF;
+    background-color: #4BD0AF;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.buttonnew {
+    width: fit-content;
+    padding: 3px 40px;
+    border-radius: 50px;
+    border: 1px solid #4BD0AF;
+    background-color: #4BD0AF;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.buttonpay {
+    background-color: #FFFFFF;
+    border: 1px solid #4BD0AF;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 20px 20px 20px 20px;
+    margin: 5px 5px 5px 5px;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 5;
+    padding: 5px 0 5px 0;
+    cursor: pointer;
+}
+
+.ovo {
+    display: inblock;
+    height: 20px;
+    background: white;
+    color: white;
+    text-decoration: none;
+}
+
+.ovo:before {
+    content: '';
+    background: url("assets/OVO.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-size: 100%;
+    background-position: top center;
+    margin-left: 400px;
+    width: 80px;
+    height: 50px;
+}
+
+.gopay {
+    display: inblock;
+    height: 20px;
+    background: white;
+    color: white;
+    text-decoration: none;
+}
+
+.gopay:before {
+    content: '';
+    background: url("assets/GOPAY.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-size: 100%;
+    background-position: top center;
+    margin-left: 400px;
+    width: 80px;
+    height: 50px;
+}
+
+.dana {
+    display: inblock;
+    height: 20px;
+    background: white;
+    color: white;
+    text-decoration: none;
+}
+
+.dana:before {
+    content: '';
+    background: url("assets/DANA.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-size: 100%;
+    background-position: top center;
+    margin-left: 400px;
+    width: 80px;
+    height: 50px;
+}
+
+
+/*Tabel Harga*/
+
+.tableharga {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.tableharga,
+th,
+td {
+    padding: 8px 20px;
+}
+
+.harga {
+    height: 50px;
+    width: 50px;
+}
+
+
 /* Hamburger Menu Animation */
 
 .sidebar-toggle span:nth-child(2) {
@@ -599,6 +788,9 @@ form button {
 }
 
 @media(max-width: 768px) {
+    .suporters-info h2 {
+        font-size: 1.2em;
+    }
     .navbar {
         padding-left: 20px;
         padding-right: 20px;
@@ -631,23 +823,8 @@ form button {
     }
 }
 
-
-/* .post .footer {
-    width: 100%;
-    border-top: 1px solid #4BD0AF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-    .sidenav a {
-        font-size: 18px;
+@media(max-width: 600px) {
+    .suporters-info h2 {
+        font-size: 1em;
     }
 }
