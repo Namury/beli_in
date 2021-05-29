@@ -59,7 +59,7 @@ class PostController extends Controller
             
             if($request->has('image')) {
                 $image = $request->file('image');
-                $post->image = $image->store('post', 'public');
+                $post->image = $image->store('image', 'public');
             }
             
             $post->save();

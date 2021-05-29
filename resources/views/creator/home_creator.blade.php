@@ -138,7 +138,11 @@
                                 <p>{!! $post->content !!}</p>
                             </div>
                             <div class="media">
-                                <img width="80%" src={{ asset('style/assets/image-post.PNG') }} alt="">
+                                @if ($post->image != null)
+                                    <img width="70%" src='storage/{{ $post->image }}' alt="">
+                                @else
+                                    <img width="70%" src={{ asset('style/assets/image-post.png') }} alt="">
+                                @endif
                             </div>
                         </div>
                     </div>

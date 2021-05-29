@@ -148,7 +148,7 @@
                                 <input type="file" id="fileupload" name="image">
                             </div>
                             <div class="upload-images">
-                                <img src="upload.png" id="upload-img">
+                                <img src="{{ asset('style/assets/upload.png') }}" id="upload-img">
                             </div>
                             </div>
 
