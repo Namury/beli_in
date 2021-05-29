@@ -124,12 +124,12 @@
                     @foreach ($following as $item)
                         <div class="following">
                             <div class="user-info">
-                                <a href="" class="avatar"><img src="{{ asset('style/assets/profile.svg') }}" alt=""></a>
-                                <a href="" class="username">{{ $item->follower->name }}</a>
+                                <a href="/{{ $item->followingDetail->page_slug }}/support" class="avatar"><img src="{{ asset('style/assets/profile.svg') }}" alt=""></a>
+                                <a href="/{{ $item->followingDetail->page_slug }}/support" class="username">{{ $item->followingDetail->name }}</a>
                             </div>
                             <div class="following-act">
-                                <button class="unfollow">Unfollow</button>
-                                <button class="view-page">View Page</button>
+                                <a href="/unfollow/{{ $item->followingDetail->id }}"><button class="unfollow">Unfollow</button></a>
+                                <a href="/{{ $item->followingDetail->page_slug }}/support"><button class="view-page">View Page</button></a>
                             </div>
                         </div>
                     @endforeach
