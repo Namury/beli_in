@@ -88,7 +88,7 @@ class MyAccountController extends Controller
                     $user->profile_picture = $image->store('profile', 'public_local_upload');   
                 }
             }
-
+            
             $user->save();
 
             DB::commit();

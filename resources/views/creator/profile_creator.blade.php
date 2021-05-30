@@ -161,7 +161,7 @@
 
                     <h3>Keahlian</h3>
                     <div class="form-group">
-                        <select class="form-control">
+                        <select class="form-control" name="user_type_id">
                             @foreach ($user_types as $user_type)
                                 @if ($user->user_type_id == $user_type->id )
                                     <option value="{{ $user_type->id }}" selected>{{ $user_type->name }}</option>
