@@ -139,12 +139,23 @@
                     @foreach ($supporters as $supporter)
                         <div class="suporter card">
                             <div class="suporter-info">
-                                <div class="profil-images">
-                                    <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
-                                </div>
-                                <div class="text">
-                                    <p><span style="font-weight:bold">{{ $supporter->supporterDetail->name }}</span>, beliin <span>{{ $supporter->amount }} {{ $supporter->item->name}}</span> untuk kamu seharga <span>Rp. {{ $supporter->total_price}}</span></p>
-                                </div>
+                                @if ( $supporter->supporterDetail->page_slug != null)
+                                    <div class="profil-images">
+                                        <a href="/{{ $supporter->supporterDetail->page_slug }}/support"><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="/{{ $supporter->supporterDetail->page_slug }}/support"><span style="font-weight:bold">{{ $supporter->supporterDetail->name }}</span></a>, beliin <span>{{ $supporter->amount }} {{ $supporter->item->name}}</span> untuk kamu seharga <span>Rp. {{ $supporter->total_price}}</span></p>
+                                    </div>
+                                    
+                                @else
+                                    <div class="profil-images">
+                                        <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
+                                    </div>
+                                    <div class="text">
+                                        <p><span style="font-weight:bold">{{ $supporter->supporterDetail->name }}</span>, beliin <span>{{ $supporter->amount }} {{ $supporter->item->name}}</span> untuk kamu seharga <span>Rp. {{ $supporter->total_price}}</span></p>
+                                    </div>
+                                    
+                                @endif
                             </div>
                             <div class="icon">
                                 <img src="{{ asset('style/assets/kopi.svg') }}" width="50px" alt="">

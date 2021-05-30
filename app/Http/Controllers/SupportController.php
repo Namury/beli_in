@@ -56,7 +56,7 @@ class SupportController extends Controller
         $item_details = array();
 
         foreach($request->all() as $key=>$amount){
-            if($key != "_token"){
+            if($key != "_token" && $amount != 0){
                 $arr = explode('amount', $key);
                 $items[(int)$arr[1]] = $amount;
             }

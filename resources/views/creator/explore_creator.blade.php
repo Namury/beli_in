@@ -115,37 +115,32 @@
         </nav>
 
         <div class="main">
-
-            <div class="card card-explore">
-                <div class="explore-desc">
-                    <h1>Eksplor Kreator</h1>
-                    <p>Jelajahi para kreator terbaik di seluruh Indonesia</p>
-                </div>
-                <div class="search">
-                    <div class="search-bar">
-                        <input type="search" class="search-input" placeholder="Cari Kreator">
-                        <button class="search-button">
-                            <svg class="submit-button" width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.2089 3.813C17.9537 4.20476 15.5081 5.50059 13.8386 7.20325C10.2068 10.8798 9.24029 16.6809 11.4955 21.2766L12.0374 22.3765L8.01017 26.5352C5.79887 28.8255 3.88046 30.9049 3.74867 31.1761C3.45578 31.7637 3.44113 33.0596 3.71938 33.602C3.95369 34.0691 4.61268 34.717 5.0813 34.9732C5.54992 35.2142 6.82398 35.169 7.36582 34.8978C7.62942 34.7622 9.65034 32.7883 11.8763 30.5131L15.9181 26.3695L16.9872 26.927C18.7005 27.816 19.9746 28.1023 22.1859 28.1023C24.4265 28.1023 25.6712 27.816 27.4725 26.8818C30.5478 25.2996 32.7445 22.5272 33.711 19.0767C34.1357 17.5096 34.1796 14.4961 33.7696 12.9893C32.0855 6.67588 26.3156 2.77332 20.2089 3.813ZM24.2947 7.42927C26.1399 7.89637 28.0436 9.26754 29.1566 10.9551C31.4997 14.481 31.0897 19.1068 28.1754 22.0902C26.5792 23.7477 24.4704 24.6367 22.1859 24.6367C18.3491 24.6367 15.0834 22.0751 13.9704 18.1877C13.6336 16.9822 13.6336 14.8727 13.9704 13.6673C15.1273 9.62916 18.7152 6.93203 22.6106 7.20325C23.1671 7.23339 23.9139 7.33886 24.2947 7.42927Z" fill="#84DCC6"/>
-                                <path d="M22.7566 9.35795C22.3319 9.55384 21.8193 10.247 21.8193 10.6387C21.8193 11.3318 22.3465 11.8893 23.2252 12.1606C24.3675 12.5071 25.4365 13.592 25.8905 14.918C26.2273 15.8371 26.6959 16.3042 27.2963 16.3042C28.1018 16.3042 28.8047 15.3248 28.629 14.4509C28.1018 11.8893 24.3821 8.66484 22.7566 9.35795Z" fill="#84DCC6"/>
-                            </svg>                            
-                        </button>
+            <form method="POST" enctype="multipart/form-data" action="/explore">
+                @csrf
+                <div class="card card-explore">
+                    <div class="explore-desc">
+                        <h1>Eksplor Kreator</h1>
+                        <p>Jelajahi para kreator terbaik di seluruh Indonesia</p>
                     </div>
-
-                    <div class="category">
-                        <a href="">Penyanyi</a>
-                        <a href="">Youtuber</a>
-                        <a href="">Streamer</a>
-                        <a href="">Pelukis</a>
-                        <a href="">Fotografer</a>
-                        <a href="">Penari</a>
-                        <a href="">Gitaris</a>
-                        <a href="">Editor</a>
-                        <a href="">Penulis</a>
+                    <div class="search">
+                        <div class="search-bar">
+                            <input name="name" type="search" class="search-input" placeholder="Cari Kreator">
+                            <button class="search-button">
+                                <svg class="submit-button" width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.2089 3.813C17.9537 4.20476 15.5081 5.50059 13.8386 7.20325C10.2068 10.8798 9.24029 16.6809 11.4955 21.2766L12.0374 22.3765L8.01017 26.5352C5.79887 28.8255 3.88046 30.9049 3.74867 31.1761C3.45578 31.7637 3.44113 33.0596 3.71938 33.602C3.95369 34.0691 4.61268 34.717 5.0813 34.9732C5.54992 35.2142 6.82398 35.169 7.36582 34.8978C7.62942 34.7622 9.65034 32.7883 11.8763 30.5131L15.9181 26.3695L16.9872 26.927C18.7005 27.816 19.9746 28.1023 22.1859 28.1023C24.4265 28.1023 25.6712 27.816 27.4725 26.8818C30.5478 25.2996 32.7445 22.5272 33.711 19.0767C34.1357 17.5096 34.1796 14.4961 33.7696 12.9893C32.0855 6.67588 26.3156 2.77332 20.2089 3.813ZM24.2947 7.42927C26.1399 7.89637 28.0436 9.26754 29.1566 10.9551C31.4997 14.481 31.0897 19.1068 28.1754 22.0902C26.5792 23.7477 24.4704 24.6367 22.1859 24.6367C18.3491 24.6367 15.0834 22.0751 13.9704 18.1877C13.6336 16.9822 13.6336 14.8727 13.9704 13.6673C15.1273 9.62916 18.7152 6.93203 22.6106 7.20325C23.1671 7.23339 23.9139 7.33886 24.2947 7.42927Z" fill="#84DCC6"/>
+                                    <path d="M22.7566 9.35795C22.3319 9.55384 21.8193 10.247 21.8193 10.6387C21.8193 11.3318 22.3465 11.8893 23.2252 12.1606C24.3675 12.5071 25.4365 13.592 25.8905 14.918C26.2273 15.8371 26.6959 16.3042 27.2963 16.3042C28.1018 16.3042 28.8047 15.3248 28.629 14.4509C28.1018 11.8893 24.3821 8.66484 22.7566 9.35795Z" fill="#84DCC6"/>
+                                </svg>                            
+                            </button>
+                        </div>
+    
+                        <div class="category">
+                            @foreach ($user_types as $type)
+                                <button name="category" type="submit" value="{{ $type->id }}">{{ $type->name }}</button>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            </form>
 
             @foreach ($users as $user)
                 <div class="card card-creator creator1">
@@ -166,57 +161,6 @@
                 </div>
             @endforeach
             
-            <div class="card card-creator creator1">
-                <div class="creator-wrap">
-                    <div class="creator-avatar avatar">
-                        <a href=""><img class="" src="https://picsum.photos/50/50" alt=""></a>
-                    </div>
-                    <div class="creator-profile">
-                        <p>Feby Putri</p>
-                        <a class="handle" href="">@febyputri</a>
-                        <p class="small">Penyanyi Cover Lagu</p>
-                    </div>
-                </div>
-                <div class="love-creator">
-                    <img src="{{ asset('style/assets/love-creator.svg') }}" alt="">
-                    <p class="small">520</p>
-                </div>
-            </div>
-
-            <div class="card card-creator creator1">
-                <div class="creator-wrap">
-                    <div class="creator-avatar avatar">
-                        <a href=""><img class="" src="https://picsum.photos/50/50" alt=""></a>
-                    </div>
-                    <div class="creator-profile">
-                        <p>Feby Putri</p>
-                        <a class="handle" href="">@febyputri</a>
-                        <p class="small">Penyanyi Cover Lagu</p>
-                    </div>
-                </div>
-                <div class="love-creator">
-                    <img src="{{ asset('style/assets/love-creator.svg') }}" alt="">
-                    <p class="small">520</p>
-                </div>
-            </div>
-
-            <div class="card card-creator creator1">
-                <div class="creator-wrap">
-                    <div class="creator-avatar avatar">
-                        <a href=""><img class="" src="https://picsum.photos/50/50" alt=""></a>
-                    </div>
-                    <div class="creator-profile">
-                        <p>Feby Putri</p>
-                        <a class="handle" href="">@febyputri</a>
-                        <p class="small">Penyanyi Cover Lagu</p>
-                    </div>
-                </div>
-                <div class="love-creator">
-                    <img src="{{ asset('style/assets/love-creator.svg') }}" alt="">
-                    <p class="small">520</p>
-                </div>
-            </div>
-
         </div>
 
 

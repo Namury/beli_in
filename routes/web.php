@@ -63,6 +63,7 @@ Route::delete('item/{id}/delete', 'SettingController@deleteItem');
 
 //explore
 Route::get('/explore', 'ExploreController@index');
+Route::post('/explore', 'ExploreController@index');
 
 //post
 Route::get('/post', 'PostController@index');
