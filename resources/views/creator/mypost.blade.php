@@ -120,7 +120,7 @@
 				   Buat Postingan
 				   </div>
 
-                   <form method="POST" enctype="multipart/form-data" action="/post/create">
+                   <form method="POST" class="new-post" enctype="multipart/form-data" action="/post/create">
                     @csrf
                     
                         <label for="title">Name:</label>
