@@ -24,7 +24,13 @@
         </a>
         </div>
         <a class="profile" href="/my-account">
-            <img src="{{ asset('style/assets/profile.svg') }}" width="40" height="" class="d-inline-block align-top" alt="">
+            @if (Auth::user()->profile_picture != null)
+                <img src='/{{ Auth::user()->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
+                
+            @else
+                <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
+                
+            @endif
         </a>
     </nav>
 	<div class="sidebarhp" onclick="openNav()">
@@ -191,7 +197,7 @@
                             </div>
                             <div class="media">
                                 @if ($post->image != null)
-                                    <img width="70%" src='storage/{{ $post->image }}' alt="">
+                                    <img width="70%" src='/{{ $post->image }}' alt="">
                                 @else
                                     <img width="70%" src={{ asset('style/assets/image-post.png') }} alt="">
                                 @endif

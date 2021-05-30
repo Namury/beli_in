@@ -53,7 +53,11 @@ class MyAccountController extends Controller
 
             if($request->has('image')) {
                 $image = $request->file('image');
-                $user->profile_picture = $image->store('profile', 'public');
+                if(config('app.env') != 'local'){
+                    $user->profile_picture = $image->store('profile', 'public_production_upload');   
+                } else{
+                    $user->profile_picture = $image->store('profile', 'public_local_upload');   
+                }
             }
 
             $user->save();
@@ -68,26 +72,48 @@ class MyAccountController extends Controller
         return redirect('/my-account');
     }
 
-    public function editProfileSupporterAction()
+    public function editProfileSupporterAction(Request $request)
     {
+        try{
+            DB::beginTransaction();
+            
+            $user = User::where('id', Auth::user()->id)->first();
+            $user->name = $request->name;
 
+            if($request->has('image')) {
+                $image = $request->file('image');
+                if(config('app.env') != 'local'){
+                    $user->profile_picture = $image->store('profile', 'public_production_upload');   
+                } else{
+                    $user->profile_picture = $image->store('profile', 'public_local_upload');   
+                }
+            }
+
+            $user->save();
+
+            DB::commit();
+        } catch(Exception $e){
+            DB::rollBack();
+			$output = $e->getMessage();
+            dd($output);
+			return redirect('/my-account')->withErrors(['msg', $output]);
+        }
+        
+        return redirect('/my-account');
     }
 
     public function creator()
     {
         $user = User::where('id', Auth::user()->id)->first();
         $user_types = UserType::get();
-        $follower = Follow::where('followed', $user->id)->with('followerDetail')->get();
-        $following = Follow::where('follower', $user->id)->with('followingDetail')->get();
 
-        return view ('creator.profile_creator', ['user' => $user, 'user_types' => $user_types, 'follower' => $follower, 'following' => $following]);
+        return view ('creator.profile_creator', ['user' => $user, 'user_types' => $user_types]);
     }
 
     public function creatorFollowing()
     {
         $user = User::where('id', Auth::user()->id)->first();
         $following = Follow::where('follower', $user->id)->with('followingDetail')->get();
-        // dd($following);
         return view ('creator.following_creator', ['user' => $user, 'following' => $following]);
     }
 
@@ -102,14 +128,15 @@ class MyAccountController extends Controller
     public function supporter()
     {
         $user = User::where('id', Auth::user()->id)->first();
-        $following = Follow::where('follower', $user->id)->with('follower')->get();
 
-        return view ('creator.my_account', ['user' => $user, 'following' => $following]);
+        return view ('supporter.profile_supporter', ['user' => $user]);
     }
 
     public function supporterFollowing()
     {
-
+        $user = User::where('id', Auth::user()->id)->first();
+        $following = Follow::where('follower', $user->id)->with('followingDetail')->get();
+        return view ('supporter.following_suporter', ['user' => $user, 'following' => $following]);
     }
 
     private function nameToSlug($string){

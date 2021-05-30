@@ -25,7 +25,7 @@
         <div>
             <a class="profile" href="/my-account">
                 @if ($user->profile_picture != null)
-                    <img src='storage/{{ $user->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
+                    <img src='/{{ $user->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
                     
                 @else
                     <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
@@ -132,7 +132,7 @@
                     <div class="form-group profile-image ">
                         <div class="profile-images">
                             @if ($user->profile_picture != null)
-                                <img src='storage/{{ $user->profile_picture }}' id="upload-img">
+                                <img src='/{{ $user->profile_picture }}' id="upload-img">
                                 
                             @else 
                                 <img src="{{ asset('style/assets/profile.svg') }}" id="upload-img">

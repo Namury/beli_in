@@ -139,7 +139,7 @@
                             </div>
                             <div class="media">
                                 @if ($post->image != null)
-                                    <img width="70%" src='storage/{{ $post->image }}' alt="">
+                                    <img width="70%" src='/{{ $post->image }}' alt="">
                                 @else
                                     <img width="70%" src={{ asset('style/assets/image-post.png') }} alt="">
                                 @endif

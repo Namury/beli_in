@@ -21,11 +21,11 @@
         <div class="logo">
             <img src="{{ asset('style/assets/logo.svg') }}" width="40" height="" class="d-inline-block align-top"
                 alt="">
-            <a class="brand" href="#">
+            <a class="brand" href="/">
                 Beli.in
             </a>
         </div>
-        <a class="profile" href="#">
+        <a class="profile" href="/my-account">
             <img src="{{ asset('style/assets/profile.svg') }}" width="40" height="" class="d-inline-block align-top"
                 alt="">
         </a>
@@ -40,7 +40,11 @@
                     <br>
                 </div>
                 <div class="media">
-                    <img width="90%" src={{ asset('style/assets/image-post.png') }} alt="">
+                    @if ($post->image != null)
+                        <img width="90%" src='/{{ $post->image }}' alt="">
+                    @else
+                        <img width="90%" src={{ asset('style/assets/image-post.png') }} alt="">
+                    @endif
                 </div>
                 <div class="large tengah">
                     {{ $post->title }}
