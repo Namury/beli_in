@@ -27,8 +27,13 @@
             </a>
         </div>
         <a class="profile" href="/my-account">
-            <img src="{{ asset('style/assets/profile.svg') }}" width="40" height="" class="d-inline-block align-top"
-                alt="">
+            @if (Auth::user()->profile_picture != null)
+                <img src='/{{ Auth::user()->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
+                
+            @else
+                <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
+                
+            @endif
         </a>
     </nav>
     <div class="sidebarhp" onclick="openNav()">

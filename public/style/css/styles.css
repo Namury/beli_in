@@ -284,6 +284,9 @@ hr {
     color: white;
 }
 
+.category button {
+    background-color: #FF686B;
+}
 
 /* Creator List */
 

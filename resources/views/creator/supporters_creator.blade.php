@@ -25,7 +25,13 @@
         <div class="profile-side">
             <div>
             <a class="profile" href="/my-account">
-                <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
+                @if (Auth::user()->profile_picture != null)
+                    <img src='/{{ Auth::user()->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
+                
+                @else
+                    <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
+                    
+                @endif
             </a>
             </div>
             <div class="sidebar-toggle">
@@ -141,7 +147,15 @@
                             <div class="suporter-info">
                                 @if ( $supporter->supporterDetail->page_slug != null)
                                     <div class="profil-images">
-                                        <a href="/{{ $supporter->supporterDetail->page_slug }}/support"><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
+                                        @if ($supporter->supporterDetail->profile_picture != null)
+                                            <a href="/{{ $supporter->supporterDetail->page_slug }}/support"><img src="{{ $supporter->supporterDetail->profile_picture }}" id="upload-img"></a>
+                                            
+                                        @else
+                                            <a href="/{{ $supporter->supporterDetail->page_slug }}/support"><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
+                                            
+                                        @endif
+                                        
+                                        
                                     </div>
                                     <div class="text">
                                         <p><a href="/{{ $supporter->supporterDetail->page_slug }}/support"><span style="font-weight:bold">{{ $supporter->supporterDetail->name }}</span></a>, beliin <span>{{ $supporter->amount }} {{ $supporter->item->name}}</span> untuk kamu seharga <span>Rp. {{ $supporter->total_price}}</span></p>

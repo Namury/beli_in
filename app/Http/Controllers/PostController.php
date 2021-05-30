@@ -59,7 +59,12 @@ class PostController extends Controller
             
             if($request->has('image')) {
                 $image = $request->file('image');
-                $post->image = $image->store('image', 'public');
+
+                if(config('app.env') != 'local'){
+                    $post->image = $image->store('image', 'public_production_upload');
+                } else{
+                    $post->image = $image->store('image', 'public_local_upload');
+                }
             }
             
             $post->save();
@@ -68,7 +73,12 @@ class PostController extends Controller
         } catch(Exception $e){
             DB::rollBack();
             if (isset($image)) {
-                Storage::delete('public/'.$image);
+                if(config('app.env') != 'local'){
+                    Storage::disk('public_production_upload')->delete($image);
+
+                }else{
+                    Storage::disk('public_local_upload')->delete($image);
+                }
             }
 			$output = $e->getMessage();
 			return redirect('/post')->withErrors(['msg', $output]);
@@ -114,7 +124,15 @@ class PostController extends Controller
         if($request->post_id != null){
             $post = Post::where('id',$request->post_id)->first();
 
-            Storage::delete('public/'.$post->image);
+            if (isset($post->image)) {
+                if(config('app.env') != 'local'){
+                    Storage::disk('public_production_upload')->delete($post->image);
+
+                }else{
+                    Storage::disk('public_local_upload')->delete($post->image);
+                }
+            }
+
             $post->delete();
 
             return redirect('/post');

@@ -42,6 +42,32 @@ return [
             'visibility' => 'public',
         ],
 
+        // if(env('APP_ENV' != 'local')){
+        //     'public_upload' => [
+        //         'driver' => 'local',
+        //         'root' => public_path().'_html',
+        //         'visibility' => 'public',
+        //     ],
+        // } else{
+        //     'public_upload' => [
+        //         'driver' => 'local',
+        //         'root' => public_path().'html',
+        //         'visibility' => 'public',
+        //     ],
+        // }
+
+        'public_local_upload' => [
+            'driver' => 'local',
+            'root' => public_path(),
+            'visibility' => 'public',
+        ],
+
+        'public_production_upload' => [
+            'driver' => 'local',
+            'root' => base_path().'public_html',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
