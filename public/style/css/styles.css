@@ -118,7 +118,7 @@ body {
 
 .card-post {
     /* margin: 30px auto; */
-    max-width: 800px;
+    width: 100%;
 }
 
 .card {
