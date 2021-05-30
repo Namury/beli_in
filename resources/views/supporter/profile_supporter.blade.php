@@ -25,7 +25,7 @@
         <div class="profile-side">
             <div>
             <a class="profile" href="#">
-                @if (Auth::user()->profile_picture != null)
+                @if (Auth::user()->profile_picture != null && file_exists(Auth::user()->profile_picture))
                     <img src='/{{ Auth::user()->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
                     
                 @else
@@ -109,7 +109,7 @@
                         </div>
                         <div class="custom-file">
                             <label for="fileupload">Unggah Foto</label>
-                            <input type="file" id="fileupload" name="image">
+                            <input type="file" id="fileupload" name="image" value="{{ $user->profile_picture }}" placeholder="{{ asset('style/assets/profile.svg') }}">
                         </div>
                     </div>
 

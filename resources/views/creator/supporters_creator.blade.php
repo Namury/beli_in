@@ -25,7 +25,7 @@
         <div class="profile-side">
             <div>
             <a class="profile" href="/my-account">
-                @if (Auth::user()->profile_picture != null)
+                @if (Auth::user()->profile_picture != null && file_exists(Auth::user()->profile_picture))
                     <img src='/{{ Auth::user()->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
                 
                 @else
@@ -147,7 +147,7 @@
                             <div class="suporter-info">
                                 @if ( $supporter->supporterDetail->page_slug != null)
                                     <div class="profil-images">
-                                        @if ($supporter->supporterDetail->profile_picture != null)
+                                        @if ($supporter->supporterDetail->profile_picture != null && file_exists($supporter->supporterDetail->profile_picture))
                                             <a href="/{{ $supporter->supporterDetail->page_slug }}/support"><img src="{{ $supporter->supporterDetail->profile_picture }}" id="upload-img"></a>
                                             
                                         @else

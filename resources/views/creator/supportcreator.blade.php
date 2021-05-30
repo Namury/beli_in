@@ -26,7 +26,7 @@
             </a>
         </div>
         <a class="profile" href="/my-account">
-            @if (Auth::user()->profile_picture != null)
+            @if (Auth::user()->profile_picture != null && file_exists(Auth::user()->profile_picture))
                 <img src='/{{ Auth::user()->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
                 
             @else
@@ -44,7 +44,7 @@
                 <div class="post">
                     <div class="avatar profile-avatar">
                         <a href="">
-                            @if ($creator->profile_picture != null)
+                            @if ($creator->profile_picture != null && file_exists($creator->profile_picture))
                                 <img src='/{{ $creator->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
                                 
                             @else
