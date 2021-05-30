@@ -24,6 +24,8 @@ body {
 
 .navbar img {
     width: 40px;
+    border-radius: 50px;
+    flex-shrink: 0;
 }
 
 .navbar .brand {
@@ -116,7 +118,7 @@ body {
 
 .card-post {
     /* margin: 30px auto; */
-    max-width: 800px;
+    width: 100%;
 }
 
 .card {
@@ -146,6 +148,7 @@ body {
 .avatar img {
     border-radius: 50%;
     width: 40px;
+    flex-shrink: 0;
 }
 
 .card-post a {
@@ -285,6 +288,7 @@ hr {
 .category button {
     background-color: #FF686B;
 }
+
 
 /* Creator List */
 
@@ -527,38 +531,6 @@ form button {
 }
 
 
-/* Hamburger Menu */
-
-.sidebar-toggle {
-    display: none;
-    flex-direction: column;
-    height: 20px;
-    justify-content: space-between;
-    position: relative;
-    z-index: 999;
-}
-
-.sidebar-toggle input {
-    position: absolute;
-    width: 40px;
-    height: 28px;
-    left: -5px;
-    top: -3px;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.sidebar-toggle span {
-    display: block;
-    width: 28px;
-    height: 3px;
-    background-color: black;
-    border-radius: 3px;
-    transition: all 0.3s;
-}
-
-
 /* Page Setting */
 
 .page-setting {
@@ -745,6 +717,38 @@ td {
 .harga {
     height: 50px;
     width: 50px;
+}
+
+
+/* Hamburger Menu */
+
+.sidebar-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 999;
+}
+
+.sidebar-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.sidebar-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    transition: all 0.3s;
 }
 
 
