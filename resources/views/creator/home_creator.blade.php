@@ -25,7 +25,7 @@
         <div class="profile-side">
             <div>
             <a class="profile" href="/my-account">
-                @if (Auth::user()->profile_picture != null)
+                @if (Auth::user()->profile_picture != null && file_exists(Auth::user()->profile_picture))
                     <img src='/{{ Auth::user()->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
                     
                 @else
@@ -130,11 +130,11 @@
                     <div class="post">
                         <div class="avatar profile-avatar">
                             <a href="">
-                                @if ($post->user->profile_picture != null)
-                                    <a href="/{{ $post->user->page_slug}}/support"><img class="" src="{{ $post->user->profile_picture }}" alt=""></a>
+                                @if ($post->user->profile_picture != null && file_exists($post->user->profile_picture))
+                                    <a href="/{{ $post->user->page_slug}}/support"><img class="" src="{{ $post->user->profile_picture }}" alt="Avatar"></a>
                                 
                                 @else
-                                    <a href="/{{ $post->user->page_slug}}/support"><img src="https://picsum.photos/50/50" width="" alt=""></a>
+                                    <a href="/{{ $post->user->page_slug}}/support"><img src="https://picsum.photos/50/50" width="40" alt="Avatar"></a>
                                     
                                 @endif
                             </a>
@@ -150,10 +150,10 @@
                                 <p>{!! $post->content !!}</p>
                             </div>
                             <div class="media">
-                                @if ($post->image != null)
-                                    <img width="70%" src='/{{ $post->image }}' alt="">
+                                @if ($post->image != null && file_exists($post->image))
+                                    <img width="50%" src='/{{ $post->image }}' alt="">
                                 @else
-                                    <img width="70%" src={{ asset('style/assets/image-post.png') }} alt="">
+                                    <img width="50%" src={{ asset('style/assets/image-post.png') }} alt="">
                                 @endif
                             </div>
                         </div>

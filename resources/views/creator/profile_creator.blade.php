@@ -24,7 +24,7 @@
         </div>
         <div>
             <a class="profile" href="/my-account">
-                @if ($user->profile_picture != null)
+                @if ($user->profile_picture != null && file_exists($user->profile_picture))
                     <img src='/{{ $user->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
                     
                 @else
@@ -131,7 +131,7 @@
                     @method('PATCH')
                     <div class="form-group profile-image ">
                         <div class="profile-images">
-                            @if ($user->profile_picture != null)
+                            @if ($user->profile_picture != null && file_exists($user->profile_picture))
                                 <img src='/{{ $user->profile_picture }}' id="upload-img">
                                 
                             @else 
@@ -140,7 +140,7 @@
                         </div>
                         <div class="custom-file">
                             <label for="fileupload">Unggah Foto</label>
-                            <input type="file" id="fileupload" name="image">
+                            <input type="file" id="fileupload" name="image" value="{{ $user->profile_picture }}" placeholder="{{ asset('style/assets/profile.svg') }}">
                         </div>
                     </div>
 
@@ -161,7 +161,7 @@
 
                     <h3>Keahlian</h3>
                     <div class="form-group">
-                        <select class="form-control">
+                        <select class="form-control" name="user_type_id">
                             @foreach ($user_types as $user_type)
                                 @if ($user->user_type_id == $user_type->id )
                                     <option value="{{ $user_type->id }}" selected>{{ $user_type->name }}</option>

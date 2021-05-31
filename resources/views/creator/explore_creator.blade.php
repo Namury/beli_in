@@ -25,7 +25,7 @@
         <div class="profile-side">
             <div>
             <a class="profile" href="/my-account">
-                @if (Auth::user()->profile_picture != null)
+                @if (Auth::user()->profile_picture != null && file_exists(Auth::user()->profile_picture))
                     <img src='/{{ Auth::user()->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
                     
                 @else
@@ -151,7 +151,7 @@
                 <div class="card card-creator creator1">
                     <div class="creator-wrap">
                         <div class="creator-avatar avatar">
-                            @if ($user->profile_picture != null)
+                            @if ($user->profile_picture != null && file_exists($user->profile_picture))
                                 <a href="/{{ $user->page_slug}}/support""><img class="" src="{{ $user->profile_picture }}" alt=""></a>
                                 
                             @else
