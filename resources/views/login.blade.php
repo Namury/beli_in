@@ -12,9 +12,9 @@
 
 <body>
     <div class="atas">
-        <div class="judul1" onclick="openCity(event, 'beranda')" id="defaultOpen">
+        <a href="/"><div class="judul1" id="defaultOpen">
             <img class="namaatas" src="{{ asset('style/assets/LogoIcon.png') }}">
-        </div>
+        </div></a>
     </div>
     <div class="panel selainmap" id="login">
         <div id="formContent">
@@ -34,7 +34,7 @@
                             <input type="submit" value="Masuk">
                         </form>
                     </div>
-                    <h4>Belum mempunyai akun? <br> <a onclick="openCity(event, 'register')"> Daftar </a></h4>
+                    <h4>Belum mempunyai akun? <br> <a href="register"> Daftar </a></h4>
                 </div>
             </div>
         </div>

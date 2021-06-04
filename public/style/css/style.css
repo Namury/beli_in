@@ -560,7 +560,7 @@ img {
 }
 
 .formplace {
-    height: 620;
+    height: 580;
     width: 380;
     border: 2px solid #84DCC6;
     margin: auto;
@@ -572,7 +572,7 @@ img {
 }
 
 .formplacecreator {
-    height: 1000;
+    height: 800;
     width: 380;
     border: 2px solid #84DCC6;
     margin: auto;

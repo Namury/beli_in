@@ -13,9 +13,9 @@
 
 <body>
     <div class="atas">
-        <div class="judul1" onclick="openCity(event, 'beranda')" id="defaultOpen">
+        <a href="/"><div class="judul1" id="defaultOpen">
             <img class="namaatas" src="{{ asset('style/assets/LogoIcon.png') }}">
-        </div>
+        </div></a>
     </div>
 
     <div class="panel selainmap" id="register">

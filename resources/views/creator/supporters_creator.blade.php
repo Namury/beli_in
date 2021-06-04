@@ -176,57 +176,6 @@
                             </div>
                         </div>
                     @endforeach
-                    <div class="suporter card">
-                        <div class="suporter-info">
-                            <div class="profil-images">
-                                <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
-                            </div>
-                            <div class="text">
-                                <p><span style="font-weight:bold">Mawar</span>, beliin <span>1 kopi</span> untuk kamu seharga <span>Rp. 25.000,00</span></p>
-                            </div>
-                        </div>
-                        <div class="icon">
-                            <img src="{{ asset('style/assets/kopi.svg') }}" width="50px" alt="">
-                        </div>
-                    </div>
-                    <div class="suporter card">
-                        <div class="suporter-info">
-                            <div class="profil-images">
-                                <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
-                            </div>
-                            <div class="text">
-                                <p><span style="font-weight:bold">Mawar</span>, beliin <span>1 kopi</span> untuk kamu seharga <span>Rp. 25.000,00</span></p>
-                            </div>
-                        </div>
-                        <div class="icon">
-                            <img src="{{ asset('style/assets/kopi.svg') }}" width="50px" alt="">
-                        </div>
-                    </div>
-                    <div class="suporter card">
-                        <div class="suporter-info">
-                            <div class="profil-images">
-                                <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
-                            </div>
-                            <div class="text">
-                                <p><span style="font-weight:bold">Mawar</span>, beliin <span>1 kopi</span> untuk kamu seharga <span>Rp. 25.000,00</span></p>
-                            </div>
-                        </div>
-                        <div class="icon">
-                            <img src="{{ asset('style/assets/kopi.svg') }}" width="50px" alt="">
-                        </div>
-                    </div>
-                    <div class="suporter card">
-                        <div class="suporter-info">
-                            <div class="profil-images">
-                                <a href=""><img src="{{ asset('style/assets/profile.svg') }}" id="upload-img"></a>
-                            </div>
-                            <div class="text">
-                                <p><span style="font-weight:bold">Mawar</span>, beliin <span>1 kopi</span> untuk kamu seharga <span>Rp. 25.000,00</span></p>
-                            </div>
-                        </div>
-                        <div class="icon">
-                            <img src="{{ asset('style/assets/kopi.svg') }}" width="50px" alt="">
-                        </div>
                     </div>
                 </div>
             </div>
