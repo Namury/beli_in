@@ -152,10 +152,10 @@
                             <div class="media">
                                 @if ($post->image != null)
                                     @if (file_exists($post->image))
-                                    <img width="50%" src='/{{ $post->image }}' alt="">
+                                    <img width="80%" src='/{{ $post->image }}' alt="">
                                     
                                     @else
-                                    <img width="50%" src={{ asset('style/assets/image-post.png') }} alt="">
+                                    <img width="80%" src={{ asset('style/assets/image-post.png') }} alt="">
 
                                     @endif
                                 @endif

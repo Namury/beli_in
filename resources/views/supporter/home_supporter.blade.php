@@ -110,7 +110,7 @@
                                 <p>{!! $post->content !!}</p>
                             </div>
                             <div class="media">
-                                <img width="50%" src="{{ asset('style/assets/image-post.png') }}" alt="">
+                                <img width="80%" src="{{ asset('style/assets/image-post.png') }}" alt="">
                             </div>
                         </div>
                     </div>
