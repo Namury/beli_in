@@ -134,7 +134,7 @@
                                     <a href="/{{ $post->user->page_slug}}/support"><img class="" src="{{ $post->user->profile_picture }}" alt="Avatar"></a>
                                 
                                 @else
-                                    <a href="/{{ $post->user->page_slug}}/support"><img src="https://picsum.photos/50/50" width="40" alt="Avatar"></a>
+                                    <a href="/{{ $post->user->page_slug}}/support"><img src="{{ asset('style/assets/profile.svg') }}" width="40" alt="Avatar"></a>
                                     
                                 @endif
                             </a>
