@@ -110,14 +110,16 @@
                                 <div class="media">
                                        
                                     @if ($post->image != null)
-                                        <img width="90%" src='/{{ $post->image }}' alt="">
-                                    @else
-                                        <img width="90%" src={{ asset('style/assets/image-post.PNG') }} alt="">
+                                        @if (file_exists($post->image))
+                                            <img width="90%" src='/{{ $post->image }}' alt="">
+                                        @else
+                                            <img width="90%" src={{ asset('style/assets/image-post.PNG') }} alt="">
+                                        @endif
                                     @endif
                                 </div>
 
                                 <div class="post-judul">
-                                    <p>{{ $post->title }}</p>
+                                    <p><a href="/{{ $post->user->page_slug }}/post/{{ $post->id }}">{{ $post->title }}</a></p>
                                 </div>
                                 <div class="post-text">
                                     <p>{!! $post->content !!}</p>
@@ -151,14 +153,9 @@
                             @foreach ($creator->items as $item)
                                 <div class="row">
                                     <div class="col-60">
-                                        @php
-                                            $bg = ['teh', 'kopi', 'donat', 'boba'];
-                                            $i = rand(0, count($bg) - 1);
-                                            $selected_bg = "$bg[$i]";
-                                        @endphp
-                                        <div class="itemdonasi @php echo $selected_bg @endphp" id="1"></div>
+                                        <div class="itemdonasi kopi" id="1"></div>
 
-                                    </div>u
+                                    </div>
                                     <div class="col-60">
                                         <label for="fname">{{ $item->name }}</label><br>
                                         <label for="fname">Rp. {{ $item->price }}</label>
@@ -221,7 +218,7 @@
                                 @foreach ($creator->items as $item)
                                     <div class="row">
                                         <div class="col-60">
-                                            <div class="itemdonasi @php echo $selected_bg @endphp" id="1"></div>
+                                            <div class="itemdonasi kopi" id="1"></div>
                                         </div>u
                                         <div class="col-60">
                                             <label for="fname">{{ $item->name }}</label><br>

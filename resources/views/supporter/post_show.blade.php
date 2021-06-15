@@ -26,8 +26,14 @@
             </a>
         </div>
         <a class="profile" href="/my-account">
-            <img src="{{ asset('style/assets/profile.svg') }}" width="40" height="" class="d-inline-block align-top"
-                alt="">
+            @if (Auth::user() != null)
+                @if (Auth::user()->profile_picture != null && file_exists(Auth::user()->profile_picture))
+                    <img src='/{{ Auth::user()->profile_picture }}' width="" height="" class="d-inline-block align-top" alt="">
+                @endif
+            @else
+                <img src="{{ asset('style/assets/profile.svg') }}" width="" height="" class="d-inline-block align-top" alt="">
+                
+            @endif
         </a>
     </nav>
 
@@ -41,9 +47,11 @@
                 </div>
                 <div class="media">
                     @if ($post->image != null)
-                        <img width="90%" src='/{{ $post->image }}' alt="">
-                    @else
-                        <img width="90%" src={{ asset('style/assets/image-post.png') }} alt="">
+                        @if (file_exists($post->image))
+                            <img width="90%" src='/{{ $post->image }}' alt="">
+                        @else
+                            <img width="90%" src={{ asset('style/assets/image-post.png') }} alt="">
+                        @endif
                     @endif
                 </div>
                 <div class="large tengah">

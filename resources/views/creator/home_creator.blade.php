@@ -150,10 +150,14 @@
                                 <p>{!! $post->content !!}</p>
                             </div>
                             <div class="media">
-                                @if ($post->image != null && file_exists($post->image))
+                                @if ($post->image != null)
+                                    @if (file_exists($post->image))
                                     <img width="50%" src='/{{ $post->image }}' alt="">
-                                @else
+                                    
+                                    @else
                                     <img width="50%" src={{ asset('style/assets/image-post.png') }} alt="">
+
+                                    @endif
                                 @endif
                             </div>
                         </div>

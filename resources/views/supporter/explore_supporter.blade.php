@@ -119,7 +119,7 @@
                                 <a href="/{{ $user->page_slug}}/support""><img class="" src="{{ $user->profile_picture }}" alt=""></a>
                                 
                             @else
-                                <a href="/{{ $user->page_slug}}/support""><img class="" src="https://picsum.photos/50/50" alt=""></a>
+                                <a href="/{{ $user->page_slug}}/support""><img class="" src="{{ asset('style/assets/profile.svg') }}" alt=""></a>
                                 
                             @endif
                         </div>

@@ -197,9 +197,13 @@
                             </div>
                             <div class="media">
                                 @if ($post->image != null)
+                                    @if (file_exists($post->image)) 
                                     <img width="70%" src='/{{ $post->image }}' alt="">
-                                @else
+
+                                    @else
                                     <img width="70%" src={{ asset('style/assets/image-post.png') }} alt="">
+
+                                    @endif
                                 @endif
                             </div>
                             <form action="/post/{{ $post->id }}/delete" method="POST">
